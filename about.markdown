@@ -7,4 +7,6 @@ As you can see from the title of this blog, my name is Alexander McDowell. I am 
 
 I plan on using this blog to talk about various mathematical things that I find novel or interesting, showcasing any major projects or publications I am working on / created, or just anything that I find particularly noteworthy to share.
 
-I am still in the process of setting everything on the webpage up, so it will look a little barren or rough around the edges for a while.
+I post arrangements and transcriptions on MuseScore. Check me out [here](https://musescore.com/user/1214651).
+
+I am still in the process of setting up everything on the webpage, so it will look a little barren or rough around the edges for a while.

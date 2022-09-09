@@ -6,6 +6,10 @@ baseurl: ""
 url: "https://alexander-mcdowell.github.io"
 github_username: alexander-mcdowell
 
+markdown: kramdown
+kramdown:
+   math_engine: mathjax
+
 theme: minima
 plugins:
   - jekyll-feed
