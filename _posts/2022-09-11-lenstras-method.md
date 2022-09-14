@@ -7,9 +7,9 @@ title:  "Factoring With Geometry: Lestra’s Method"
 
 This article is a reformatted version of my submission to the [Summer of Math Exposition 2](https://summerofmathexposition.substack.com/p/the-summer-of-math-exposition-is?s=r) (SoME2) contest hosted by the YouTube creator [3Blue1Brown](https://www.youtube.com/c/3blue1brown). You can find the original article [here](https://medium.com/@lextmcdowell/factoring-with-geometry-lestras-method-e34f917faf4).
 
-In this article, I want to tell you about one of my favorite mathematical algorithms: **Lenstra’s method**. It is an algorithm for factoring large integers but it approaches the problem from a unique perspective. Though to understand how this algorithm works, I’ll need to take you on a journey through the world of number theory.
+In this article, I want to tell you about one of my favorite mathematical algorithms: **Lenstra’s method**. It is an algorithm for factoring large integers which approaches the problem from a unique perspective. In order to understand how this algorithm works, I'll need to take you on a journey through the world of number theory.
 
-**(DISCLAIMER)** I’ve written this article to be approachable to students from all different levels of math. As a result, the proofs below are high-level and not especially rigorous, though I strive to maintain depth and accuracy with my explanations. My goal is to build intuition and enthusiasm, but if you would like a more comprehensive, formal, and rigorous description of Lenstra’s method, I encourage you to consult the resources located at the bottom of this article.
+**(DISCLAIMER)** I’ve written this article to be approachable to students from all different levels of math. As a result, the proofs below are not especially rigorous, though I strive to maintain depth and accuracy with my explanations. My goal is to build intuition and enthusiasm, but if you would like a more comprehensive, formal, and rigorous description of Lenstra’s method, I encourage you to consult the resources located at the bottom of this article.
 
 <br>
 
@@ -19,7 +19,7 @@ In this article, I want to tell you about one of my favorite mathematical algori
 
 ## Part 1 — In Search of a Factor
 
-Integer factorization holds an essential role in mathematics. Breaking apart a number into its component primes finds a wide array of uses across the various, seemingly disjunct, domains of mathematics. To name a few examples, in algebra, integer factorization helps mathematicians determine the possible decompositions of a finite abelian group. In number theory, crucially important theorems such as the [Chinese Remainder Theorem](https://crypto.stanford.edu/pbc/notes/numbertheory/crt.html) and [Euler’s Theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem) depend upon knowing how a given number factors. The list of applications of factorization could go on and on. Factorization is one of the most powerful techniques in the mathematician’s toolkit, yet despite its profound importance, I would wager that the factorization method you were taught is *highly inefficient*. Why is this?
+Integer factorization holds an essential role in mathematics. Breaking apart a number into its component primes finds a wide array of uses across the various, seemingly disjunct, domains of mathematics. To name a few examples, in algebra, integer factorization helps mathematicians determine the possible decompositions of a finite abelian group. In number theory, crucial important theorems such as the [Chinese Remainder Theorem](https://crypto.stanford.edu/pbc/notes/numbertheory/crt.html) and [Euler’s Theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem) depend upon knowing how a given number factors. The list of applications of factorization could go on and on. Factorization is one of the most powerful techniques in the mathematician’s toolkit, yet despite its profound importance, I would wager that the factorization method you were taught is *highly inefficient*. Why is this?
 
 Say we want to factor 5040. Here’s how you would probably go about it. We know that the first five prime numbers are 2, 3, 5, 7, and 11, so why don’t we try to divide 5040 by each of these numbers? 2 divides four times, 3 divides twice, 5 divides once, seven divides once, and eleven does not divide at all. Luckily for us, these happen to be the only prime factors of 5040.
 
@@ -34,9 +34,9 @@ Say we want to factor 5040. Here’s how you would probably go about it. We know
 
 This approach is known as the **trial division algorithm**. It is the simplest and most straightforward of the factorization algorithms. It is the method every student is first taught and, for many, it is the last they will ever learn. But there is so much more to factoring. Perhaps understanding what is *wrong* with the trial division algorithm serves as a good place to start on our journey.
 
-The trial division method is all well and good provided that we can do two things. First, we must be able to efficiently generate a list of prime numbers. Both the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Pseudocode) and [Sieve of Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin#Pseudocode) permit us this possibility so the first requirement is not a huge concern. That is, assuming that the number we are factoring has prime factors within our repository of primes. This caveat brings us to the second condition, which poses more of an issue. The trial division algorithm only works efficiently provided that we know that the prime factors of the number are *small*.
+The trial division method is all well and good provided that we can do two things. First, we must be able to efficiently generate a list of prime numbers. Both the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Pseudocode) and [Sieve of Atkin](https://en.wikipedia.org/wiki/Sieve_of_Atkin#Pseudocode) permit us this possibility so this first requirement is not a huge concern. That is, assuming that the number we are factoring has prime factors within our repository of primes. This caveat brings us to the second condition, which poses more of an issue. The trial division algorithm only works efficiently provided that we know that the prime factors of the number are *small*.
 
-Consider a very large number such as 6,755,386,553,008,134 (6 quadrillion, 755 trillion, 386 billion, 553 million, 8 thousand, and 134 — quite the mouthful, isn’t it?). It can be verified that this number is divisible by 2 and 3, but its only other prime factors are relatively large — 524,287 and 2,147,483,647. We would have to iterate through our list of primes for quite a while until we “hit” these factors. This number *could* be factored by trial division by a computer after some time, especially since the first large prime (524,287) appears much earlier than the second (2,147,483,647), but it would be easy to conceive of a number so large that using trial division would not halt after a reasonable period of time. With trial division, we would be unnecessarily checking the divisibility of our number by a bunch of “misses” as opposed to the sparser “hits” —the numbers we actually care about. Checking divisibility like this is an incredibly wasteful process and, for numbers with exceptionally large prime factors, the trial division algorithm would take ages before it finishes.
+Consider a very large number such as 6,755,386,553,008,134 (6 quadrillion, 755 trillion, 386 billion, 553 million, 8 thousand, and 134 — quite the mouthful, isn’t it?). It can be verified that this number is divisible by 2 and 3, but its only other prime factors are relatively large — 524,287 and 2,147,483,647. We would have to iterate through our list of primes for quite a while until we “hit” these factors. This number *could* be factored by trial division by a computer after some time, especially since the first large prime (524,287) appears much earlier than the second (2,147,483,647), but it would be easy to conceive of a number so large that trial division would not halt after a reasonable period of time. With trial division, we would be unnecessarily checking the divisibility of our number by a bunch of “misses” as opposed to the sparser “hits” —the numbers we actually care about. Checking divisibility like this is an incredibly wasteful process and, for numbers with exceptionally large prime factors, the trial division algorithm would take ages before it finishes.
 
 <br>
 
@@ -58,7 +58,7 @@ Trial division thus leaves us with a problem. *How can we increase our hit rate*
 <br>
 
 ## Part 2 — In Search of a Solution
-In 1974, a British mathematician named John Pollard published a factoring algorithm known as $$p-1$$. The power of this method comes from how it substantially reduces the total number of “misses” we consider. Proving this method relies on some algebra that may seem counterintuitive at first or like some sort of mathematical trickery — at least, it seemed that way to me at first. It is my hope that by the end of the proof it will be clear that every step was done for an important reason.
+In 1974, a British mathematician named John Pollard published a factoring algorithm known as $$p-1$$. The power of this method comes from how it substantially reduces the total number of “misses” we consider. Proving this method relies on some algebra that may seem counterintuitive at first or like some sort of mathematical trickery — at least, it seemed that way to me at first. It is my hope that, by the end of the proof, it will be clear that every step was done for an important reason.
 
 The proof of $$p-1$$ is done by means of a theorem known as **Fermat’s Little Theorem**, not to be confused with its older and more infamous brother: [Fermat’s Last Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem).
 
@@ -76,7 +76,7 @@ For instance, if $$\alpha = 12$$ and $$p = 7$$, we know that $$12^7 = 35,831,808
 
 <br>
 
-Now consider what happens if we divide both sides by $$\alpha$$ and raise both sides of this equation to some positive integer $$m$$.
+Now consider what happens if we divide both sides by $$\alpha$$ and raise both sides of this equation by some positive integer $$m$$.
 
 <p align="center">
     $$
@@ -215,7 +215,7 @@ Lenstra's method relies on a class of curves known as **elliptic curves**. Ellip
 
 And before you ask, **no**. Elliptic curves are *not* ellipses. Elliptic curves are not all that related to ellipses either - at least, based on how I will be presenting them in this article. But there *is* a reason for this nomenclature - it is just beyond the scope of this article. In short, the term "elliptic" refers to the [elliptic integrals](https://en.wikipedia.org/wiki/Elliptic_integral) used to compute the arc lengths of ellipses.
 
-An elliptic curve is an equation of the form $$y^2= x^3 + ax + b$$ (which I will occasionally denote by $$E_{a,b}$$). The curve is symmetric about the x-axis and bulges at the center.
+An elliptic curve is an equation of the form $$y^2= x^3 + ax + b$$ (which I will occasionally denote by $$E_{a,b}$$). The curve is symmetric about the x-axis and bulges at its center.
 
 <p align="center">
     <img src="/images/lenstra/part3_1.PNG" alt="Elliptic Curve Example" width=382px height=339px>
@@ -226,23 +226,23 @@ One neat property of these curves is that, depending on our choice for $$a$$ and
 
 <p align="center">
     <img src="/images/lenstra/part3_2.PNG" alt="Elliptic Curve Division" width=257px height=339px>
-    <h5 align="center">A graph of the elliptic curve y² = x³ - 10x + 3. This time, the elliptic curve consists of two distinct components.</h5>
+    <h5 align="center">A graph of the elliptic curve y² = x³ - 10x + 3. This time, the elliptic curve consists of two distinct components: the "mainland" curve (right) and the "island" curve (left).</h5>
 </p>
 
 <br>
 
-When we use elliptic curves in number theory, we often want to compute points on an elliptic curve with respect to some modulus. For instance, we might want to find the set of all integers $$(x, y)$$ on some elliptic curve mod 10. It should be noted that, when we do this, we are only considering rational solutions to our modular elliptic curve. By taking the modulo of our elliptic curve, we don't get a continuous curve like before, but instead, we get a seemingly random scattering of points. What's more, our elliptic curve is *much* smaller. Whereas before we had infinitely many real points on the curve, we now have finitely many integer points. As counter-intuitive as it seems, this scatterplot is *still* our elliptic curve, just from the perspective of each point's remainders. Evaluating elliptic curves in this peculiar way grants us some *very* important properties for factoring numbers, as you will soon see.
+When we use elliptic curves in number theory, we often want to compute points on an elliptic curve with respect to some modulus. For instance, we might want to find the set of all integer points $$(x, y)$$ on some elliptic curve mod 10. It should be noted that, when we do this, we are only considering rational solutions to our modular elliptic curve. By taking the modulo of our elliptic curve, we don't get a continuous curve like before, but instead, we get a seemingly random scattering of points. What's more, our elliptic curve is *much* smaller. Whereas before we had infinitely many real points on the curve, we now have finitely many integer points. As counter-intuitive as it seems, this scatterplot is *still* our elliptic curve, just from the perspective of each point's remainders. Evaluating elliptic curves in this peculiar way grants us some *very* important properties for factoring numbers, as you will soon see.
 
 <br>
 
 <p align="center">
     <img src="/images/lenstra/EllipticCurveModularDemo_ManimCE_v0.15.2.gif">
-    <h5 align="center">An animation of the process of transforming an elliptic curve into its modular twin (or rather, a subset of points on its modular twin). Don't worry if the animation looks a little "hand-wavy" - it's a weird transformation. What's happening is that we identify all of the points on the original elliptic curve that are rational - capable of being written as a fraction between integers. We can then map these rational points to integer points in the modular plane using a process that will be described later on in the article.</h5>
+    <h5 align="center">An animation of the process of transforming an elliptic curve into its modular twin (or more accurately a subset of points on its modular twin). Don't worry if the animation looks a little "hand-wavy" - it's a weird transformation. What's happening is that we identify all of the points on the original elliptic curve that are rational - whose coordinates are capable of being written as a ratio of integers. We can then map these rational points to integer points in the modular plane using a process that will be described later on in the article.</h5>
 </p>
 
 <br>
 
-Remember that for any elliptic curve we can construct a corresponding modular elliptic curve. We won't be using this technique just quite yet, but it will serve us well later on, so keep it in the back of your mind for now.
+Remember that, for any elliptic curve, we can construct a corresponding modular elliptic curve. We won’t be using this technique just quite yet, but it will serve us well later on.
 
 <br>
 
@@ -250,7 +250,7 @@ Remember that for any elliptic curve we can construct a corresponding modular el
 
 <br>
 
-What does it mean to add? This may seem like an odd tangent considering I was just talking about curves, but providing a relatively formal definition for addition will aid us with factoring.
+What does it mean to add? This may seem like an odd tangent considering I was just talking about curves, but creating a relatively formal definition for addition will aid us with factoring.
 
 Well, our definition of addition is entirely dependent on what it is that we wish to add. Adding integers is different from adding complex numbers which is different from modular addition. These are relatively simple examples, but they illustrate the simple principle that even commonplace operators have different behaviors depending on the set of "things" that they act upon.
 
@@ -274,7 +274,7 @@ Suppose we define an operation called **addition** that takes any two elements i
 - For all elements in the set, there should also exist a unique inverse in our set that, when added to the original element, produces our identity. I will denote the identity of any $$a$$ in our group by $$-a$$.
 <p align="center">
     $$\large{a + (-a) = (-a) + a = e \text{ for } a \in G}$$
-    <h5 align="center">The definition of inverse for a group G. If our group was the set of integers with the binary operation between integers being addition, then the identity element would be the negation of the element (2's inverse would be -2 since 2 + (-2) = 0). If the binary operation was instead multiplication, then only 1 and -1 would have inverses, since all other integers would have non-integer inverses (for instance, 2's inverse would be 1/2 which is not an integer). This means that the set of integers with the addition operator forms a group, but the set of integers with the multiplication operator does not form a group.</h5>
+    <h5 align="center">The definition of inverse for a group G. If our group was the set of integers with the binary operation between integers being addition, then the identity element would be the negation of the element (2's inverse would be -2 since 2 + (-2) = 0). If the binary operation was instead multiplication, then only 1 and -1 would have inverses since all other integers would have non-integer inverses (for instance, 2's inverse would be 1/2 which is not an integer). This means that the set of integers with the addition operator forms a group, but the set of integers with the multiplication operator does not form a group.</h5>
 </p>
 
 <br>
@@ -301,7 +301,7 @@ Side note: this may seem like a lot of properties to remember, but these restric
 
 Now, back to elliptic curves.
 
-Suppose we have two points $$P$$ and $$Q$$ on an elliptic curve. What would it mean to add these two points? We could try adding the $$x$$ and $$y$$ coordinates of each point, but this definition of point addition fail to be closed — we would not be guaranteed a point that lies on our elliptic curve. For instance, $$(0,2)$$ and $$(1,3)$$ are points on the elliptic curve $$E_{4,4}: y^2 = x^3 + 4x + 4$$, but $$(1,5)$$ is not. Our definition for addition on an elliptic curve instead needs to satisfy the properties of an abelian group.
+Suppose we have two points $$P$$ and $$Q$$ on an elliptic curve. What would it mean to add these two points? We could try adding the $$x$$ and $$y$$ coordinates of each point, but this definition of point addition fails to be closed — we would not be guaranteed a point that lies on our elliptic curve. For instance, $$(0,2)$$ and $$(1,3)$$ are points on the elliptic curve $$E_{4,4}: y^2 = x^3 + 4x + 4$$, but $$(1,5)$$ is not. Our definition for addition on an elliptic curve instead needs to satisfy the properties of an abelian group.
 
 <p align="center">
     <img src="/images/lenstra/part3_3.PNG" width=197px height=484px>
@@ -342,7 +342,7 @@ But suppose there *is* a third point. What would this hypothetical point "on" th
 
 <p align="center">
     <img src="/images/lenstra/EllipticCurveAdditionInfinityPoint_ManimCE_v0.15.2.gif">
-    <h5 align="center">An animation showing the addition of two points on an elliptic curve, where each point is the x-axis reflection of the other. This creates the infinity point which lies at the extremes of the vertical line joining the points.</h5>
+    <h5 align="center">An animation showing the addition of two points on an elliptic curve, where each point is the x-axis reflection of the other. This creates the infinity point, which lies at the extremes of the vertical line joining the points.</h5>
 </p>
 
 <br>
@@ -381,7 +381,7 @@ The strangeness of the infinity point appears to follow as a consequence of simp
     <h5 align="center">An elliptic curve in 3 variables. We often restrict X, Y, and Z to integers so that solutions (x, y) to the 2D case are rational.</h5>
 </p>
 
-We describe points on this curve in homogeneous coordinates $$[X : Y : Z]$$. In this system, every $$[X : Y : Z]$$ maps to the same point in the Cartesian plane as $$[kX : kY : kZ]$$ for some non-zero real number $$k$$. Furthermore, we omit the point $$[0 : 0 : 0]$$ from our coordinate system. Thus, the elliptic curve of three variables above (in homogeneous coordinates) has been projected onto the 2D plane by $$x = X/Z$$ and $$y = Y/Z$$; this is why the infinity point doesn’t make sense. $$(0, 1, 0)$$ and all of its multiples are valid solutions to the elliptic curve in homogeneous coordinates, but they undergo a strange transformation when they are projected onto the Cartesian plane because of a division by zero. Thus, in the 2D case, $$(0, 1, 0)$$ (and all its multiples) become the “infinity point”. In this sense, the infinity point still maintains its uniqueness since $$[0 : 1 : 0]$$ and $$[0 : 2 : 0]$$ are treated as effectively the same point. There will never be multiple infinity points, because *every* point of the form $$[0 : k : 0]$$ is an infinity point.
+We describe points on this curve in homogeneous coordinates $$[X : Y : Z]$$. In this system, every $$[X : Y : Z]$$ maps to the same point in the Cartesian plane as $$[kX : kY : kZ]$$ for some non-zero real number $$k$$. Furthermore, we omit the point $$[0 : 0 : 0]$$ from our coordinate system. Thus, the elliptic curve of three variables above (in homogeneous coordinates) has been projected onto the 2D plane by $$x = X/Z$$ and $$y = Y/Z$$; this is why the infinity point doesn’t make sense. $$(0, 1, 0)$$ and all of its multiples are valid solutions to the elliptic curve in homogeneous coordinates, but they undergo a strange transformation when they are projected onto the Cartesian plane because of a division by zero. Thus, in the 2D case, $$(0, 1, 0)$$ (and all its multiples) become the “infinity point”. In this sense, the infinity point still maintains its uniqueness since $$[0 : 1 : 0]$$ and $$[0 : 2 : 0]$$ are treated as effectively the same point. There will never be multiple infinity points because *every* point of the form $$[0 : k : 0]$$ is an infinity point.
 
 In addition, one can also show using homogeneous coordinates that the line connecting any $$P$$ and its inverse intersects at the infinity point $$O$$.
 
@@ -435,7 +435,7 @@ If the points are distinct, but $$Q$$ is not a reflection of $$P$$ (since this w
 		\\
 		\large{\text{Where } m = \frac{y_Q - y_P}{x_Q - x_P} \text{ and } \beta = y_P - mx_P}
     $$
-    <h5 align="center">The parameters of the line PQ joining P and Q and intersects the elliptic curve at some distinct third point.</h5>
+    <h5 align="center">The parameters of the line PQ joining P and Q and intersecting the elliptic curve at some distinct third point.</h5>
 </p>
 
 <br>
@@ -688,7 +688,7 @@ That was a lot of math! To recap, here is how I might go about implementing Lens
     $$
 </p>
 <br>
-4. Finally, we compute $$kP$$ mod $$n$$ using the point addition methods I discussed earlier. Here, we can implement a simple and efficient optimization. Instead of adding our point $$k$$ times which would get out of hand quickly, we can use a method of adding by doubling. To consider a small example, say we wanted to compute $$20P$$. We could first take $$P$$, double it ($$2P$$), double it again ($$4P$$), add P ($$5P$$), then double it twice more to get $$20P$$. This requires us to do only five point addition operations instead of 19.
+4. Finally, we compute $$kP$$ mod $$n$$ using the point addition methods I discussed earlier. Here we can implement a simple and efficient optimization. Instead of adding our point $$k$$ times -  which would get out of hand quickly -  we can use a method of adding by doubling. To consider a small example, say we wanted to compute $$20P$$. We could first take $$P$$, double it ($$2P$$), double it again ($$4P$$), add P ($$5P$$), then double it twice more to get $$20P$$. This requires us to do only five point addition operations instead of 19.
 <p align="center">
     $$
         \large{20P = \underbrace{P + P + ... + P}_{\text{19 times}}}
@@ -728,7 +728,7 @@ Of all of the factorization algorithms known, Lenstra's algorithm is the third-f
 
 <p align="center">
     $$\large{O(e^{c\sqrt{\ln(p)\ln(\ln(p))}})}$$
-    <h5 align="center">The runtime complexity for Lenstra's method. What a mess! But notice two things: (1) the runtime is exponential, and (2) the runtime depends only on the smallest prime factor p of n. The important thing about this first observation is all factorization algorithms have exponential runtime complexity. Don't let the exponential runtime detract from the power of Lenstra's method.</h5>
+    <h5 align="center">The runtime complexity for Lenstra's method. What a mess! But notice two things: (1) the runtime is exponential, and (2) the runtime depends only on the smallest prime factor p of n. The important thing about this first observation is all factorization algorithms have exponential runtime complexity. Don't let the exponential runtime detract from the power of Lenstra's method!</h5>
 </p>
 
 Though we have reached the end of this article, this is not the end for Lenstra's method. There are plenty of optimizations and improvements that can be made! One of the state-of-the-art elliptic curve factorization algorithms, GMP-ECM, makes several key changes to Lenstra's original algorithm. For instance, GMP-ECM uses a different class of elliptic curves known as [Montgomery curves](https://en.wikipedia.org/wiki/Montgomery_curve) which have point addition formulae which end up being much faster to compute. In addition, GMP-ECM factors integers in two stages, using different smoothness bounds for each stage.
