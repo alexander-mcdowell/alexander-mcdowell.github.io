@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Application of Chebyshev Polynomials to the Polynomial x^k + x^-k"
+title:  "Application of Chebyshev Polynomials to the Rational Equation x^k + x^-k"
 katex: true
 ---
 
 ### A study of Chebyshev Polynomials and their seemingly unexpected application to the polynomial $$x^k + x^{-k}$$
 
-This blog post was written as a result of a shower thought I had about a simple problem from high-school algebra. In concerns the representations of the polynomial $$x^k + x^{-k}$$ as a polynomial with integer coefficients and is inspired by problems one might have seen in high-school mathematics competitions.
+This blog post was written as a result of a shower thought I had about a simple problem from high-school algebra. In concerns the representations of $$x^k + x^{-k}$$ as a polynomial with integer coefficients and is inspired by problems one might have seen in high-school mathematics competitions.
 
 <br>
 
