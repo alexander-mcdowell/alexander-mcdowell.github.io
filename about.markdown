@@ -7,7 +7,7 @@ My name is Alexander McDowell and I am currently an undergraduate at the Univers
 
 I plan on using this blog to talk about various mathematical things that I find novel or interesting, showcasing any major projects or publications I am working on / created, or just anything that I find particularly noteworthy to share.
 
-I am a huge fan of [Project Euler]() and highly encourage you check it out! It is basically a website that posts challenging mathematics problems with an emphasis on number theory, combinatorics, and algorithmic design.
+I am a huge fan of [Project Euler](https://projecteuler.net/about) and highly encourage you check it out! It is basically a website that posts challenging mathematics problems with an emphasis on number theory, combinatorics, and algorithmic design.
 
 ![Project Euler Stats](https://projecteuler.net/profile/Luthanicus.png)
 
