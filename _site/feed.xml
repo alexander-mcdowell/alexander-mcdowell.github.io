@@ -1,10 +1,291 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-11T20:47:18-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alexander McDowell’s Domain of Mathematics</title><subtitle>This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</subtitle><entry><title type="html">Factoring With Geometry: Lestra’s Method</title><link href="http://localhost:4000/2022/09/11/lenstras-method.html" rel="alternate" type="text/html" title="Factoring With Geometry: Lestra’s Method" /><published>2022-09-11T00:00:00-07:00</published><updated>2022-09-11T00:00:00-07:00</updated><id>http://localhost:4000/2022/09/11/lenstras-method</id><content type="html" xml:base="http://localhost:4000/2022/09/11/lenstras-method.html">&lt;h3 id=&quot;an-introduction-to-a-fascinating-integer-factorization-algorithm-told-in-five-parts&quot;&gt;An introduction to a fascinating integer factorization algorithm, told in five parts.&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-14T15:35:30-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alexander McDowell’s Domain of Mathematics</title><subtitle>This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</subtitle><entry><title type="html">On the Average Order of the Totient Summatory Function</title><link href="http://localhost:4000/2023/12/14/totient-summatory.html" rel="alternate" type="text/html" title="On the Average Order of the Totient Summatory Function" /><published>2023-12-14T00:00:00-08:00</published><updated>2023-12-14T00:00:00-08:00</updated><id>http://localhost:4000/2023/12/14/totient-summatory</id><content type="html" xml:base="http://localhost:4000/2023/12/14/totient-summatory.html">&lt;p&gt;This blog post serves to highlight a paper I recently wrote for a mathematics writing course at UCI. I wanted to feature it since I found the topic very interesting to both read and write about. I may write about some of the topics in greater detail in the future (specifically lattice point visibility in arbitrary regions).&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+    &lt;iframe src=&quot;https://drive.google.com/file/d/10Lbb6RAQUMiXCY-oA8BpnvwxnWRpOt-V/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">This blog post serves to highlight a paper I recently wrote for a mathematics writing course at UCI. I wanted to feature it since I found the topic very interesting to both read and write about. I may write about some of the topics in greater detail in the future (specifically lattice point visibility in arbitrary regions).</summary></entry><entry><title type="html">Application of Chebyshev Polynomials to the Polynomial x^k + x^-k</title><link href="http://localhost:4000/2023/12/14/chebyshev.html" rel="alternate" type="text/html" title="Application of Chebyshev Polynomials to the Polynomial x^k + x^-k" /><published>2023-12-14T00:00:00-08:00</published><updated>2023-12-14T00:00:00-08:00</updated><id>http://localhost:4000/2023/12/14/chebyshev</id><content type="html" xml:base="http://localhost:4000/2023/12/14/chebyshev.html">&lt;h3 id=&quot;a-study-of-chebyshev-polynomials-and-their-seemingly-unexpected-application-to-the-polynomial-xk--x-k&quot;&gt;A study of Chebyshev Polynomials and their seemingly unexpected application to the polynomial \(x^k + x^{-k}\)&lt;/h3&gt;
+
+&lt;p&gt;This blog post was written as a result of a shower thought I had about a simple problem from high-school algebra. In concerns the representations of the polynomial \(x^k + x^{-k}\) as a polynomial with integer coefficients and is inspired by problems one might have seen in high-school mathematics competitions.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;studying-xk--dfrac1xk&quot;&gt;Studying \(x^k + \dfrac{1}{x^k}\)&lt;/h2&gt;
+
+&lt;p&gt;The fundamental problem we wish to study is this:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let \(k\in \mathbb{N}\), \(x \in \mathbb{R}\), and \(C\in \mathbb{R}\). Suppose \(x\) solves the following rational equation:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p align=&quot;center&quot;&gt;
+    $$\large{\displaystyle x + \frac{1}{x} = C}$$
+&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;We assume that \(C\) is chosen such that the above equation permits real roots. How can we represent \(x^k + x^{-k}\) in terms of \(C\)?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Well, to start, we can try looking at the first few values of \(k\) in order to understand the types of representations \(x^k + x^{-k}\) permits.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If \(k=0\), then \(1 + \dfrac{1}{1} = 2\) and so this value of \(k\) yields a &lt;em&gt;constant&lt;/em&gt; representation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If \(k=1\), then \(x + \dfrac{1}{x} = C\) and so this value of \(k\) yields a &lt;em&gt;linear&lt;/em&gt; representation.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If \(k=2\), then \(x^2 + \dfrac{1}{x^2} = \left(x + \dfrac{1}{x}\right)^2 - 2 = C^2 - 2\) and so this value of \(k\) yields a &lt;em&gt;quadratic&lt;/em&gt; representation.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From these initial cases, it apppears that \(x^k + \frac{1}{x^k}\) can be represented as a degree-\(k\) polynomial with integer coefficients and evaluated at \(C\). However, just three examples is not sufficient to establish such a generalization, so let us prove this result more formally.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conjecture&lt;/strong&gt;: &lt;em&gt;Suppose&lt;/em&gt; \(x + \frac{1}{x} = C\) &lt;em&gt;is satisfied for a given&lt;/em&gt; \(C\in \mathbb{R}\) &lt;em&gt;and for some&lt;/em&gt; \(x\in \mathbb{R}\). &lt;em&gt;Then there exists some polynomial with integer-valued coefficients&lt;/em&gt; \(p(x) \in \mathbb{Z}[x]\) &lt;em&gt;such that&lt;/em&gt; \(x^k + \frac{1}{x^k} = p(C).\)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Proof: This isn’t so hard to demonstrate. Consider \(x^{k-1} + \frac{1}{x^{k-1}}\). Multiplying this expression by \(x + \frac{1}{x}\) yields \((x^{k-1} + \frac{1}{x^{k-1}})(x + \frac{1}{x}) = x^k + x^{k-2} + \frac{1}{x^{k-2}} + \frac{1}{x^{k}}\).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If we assume that \(x^k + \frac{1}{x^k} = p_k(C)\) for some polynomial \(p_k(x) \in \mathbb{Z}[x]\) chosen based on \(k\), then it follows that \(p_k(C) = Cp_{k-1}(C) - p_{k-2}(C)\).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Since \(p_0(C) = 2\) and \(p_1(C) = C\), we can apply this inductive step into order to show that \(p_k(C)\) for every non-negative integer \(k\).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What we have just demonstrated is an extremely useful recurrence relation which we can use to derive polynomial representations for larger values of \(k\).&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\large{\displaystyle \boxed{p_k(x) = Cp_{k-1}(x) - p_{k-2}(x)}}$$
+&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;For \(k=3\), we have \(p_3(C) = Cp_2(C) - p_1(C) = C(C^2 - 2) - (C)\) so \(p_3(C) = C^3 - 3C\) and thus \(x^3 + \dfrac{1}{x^3} = C^3 - 3C\).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For \(k=4\), we have \(p_4(C) = Cp_3(C) - p_2(C) = C(C^3 - 3C) - (C^2 - 2)\) so \(p_4(C) = C^4 - 4C^2 + 2\) and thus \(x^4 + \dfrac{1}{x^4} = C^4 - 4C^2 + 2\).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For \(k=5\), we have \(p_5(C) = Cp_4(C) - p_3(C) = C(C^4 - 4C^2 + 2) - (C^3 - 3C)\) so \(p_4(C) = C^5 - 5C^3 + 5C\) and thus \(x^5 + \dfrac{1}{x^5} = C^5 - 5C^3 + 5C\).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;For \(k=6\), we have \(p_6(C) = Cp_5(C) - p_4(C) = C(C^5 - 5C^3 + 5C) - (C^4 - 4C^2 + 2)\) so \(p_6(C) = C^6 - 6C^4 + 9C^2 - 2\) and thus \(x^6 + \dfrac{1}{x^6} = C^6 - 6C^4 + 9C^2 - 2\).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can already start to see some patterns emerge. Define \(a(k, i): \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{Z}\) to be the function which returns the coefficients of the \(k\)-th polynomial \(p_k(x) = \sum_{i=0}^{k}a(k, i)x^{k-i}\).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;\(a(k, 0) = 1\) for all \(k\geq 0\) and the next non-zero coefficient is \(-k\).&lt;/li&gt;
+  &lt;li&gt;If \(k\) is even, then \(a(k, 2i + 1) = 0\) (odd-degree terms are absent). Instead, if \(k\) is odd, then \(a(k, 2i) = 0\) (even-degree terms are absent). Moreover, the power on each term decrements by 2.&lt;/li&gt;
+  &lt;li&gt;The coefficients of \(p_k(x)\) have alternating sign.&lt;/li&gt;
+  &lt;li&gt;There are \(\left\lceil \dfrac{k + 1}{2} \right\rceil\) non-zero coefficient terms in \(p_k(x)\).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not only do we still need to prove these conjectures, there still remains one important question: &lt;em&gt;Can we generate&lt;/em&gt; \(p_k(C)\) &lt;em&gt;for arbitrary&lt;/em&gt; \(k\)?&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;solving-our-recurrence-relation&quot;&gt;Solving our Recurrence Relation&lt;/h2&gt;
+
+&lt;p&gt;We can solve the recurrence relation we previously discovered by first considering an alternate perspective to the equation that began this investigation: \(x + \dfrac{1}{x} = C\).&lt;/p&gt;
+
+&lt;p&gt;Suppose we wanted to understand the very similar yet fundamentally distinct equation \(z + \dfrac{1}{z} = C\) where \(z\in \mathbb{C}\) is a root. Rather restrict ourselves to the real numbers, we can expand our field of view (pun intended) to arrive at new conclusions. Furthermore, let us restrict the value of \(C\) so that \(\|C\| \leq 2\) for reasons that will soon become apparent.&lt;/p&gt;
+
+&lt;p&gt;Every complex number with \(\|z\| \leq 1\) permits a polar representation \(z = e^{i\theta}\). Let us suppose that such a \(z\) solves the complex form of our rational equation. Then \(C = e^{i\theta} + e^{-i\theta} = 2\cos(\theta)\) and, likewise, \(z^k + \dfrac{1}{z^k} = e^{ik\theta} + e^{-ik\theta} = 2\cos(k\theta)\). If we can express \(2\cos(k\theta)\) in terms of \(2\cos(\theta)\), we will have found a way to express \(z^k + \dfrac{1}{z^k}\) in terms of \(C\).&lt;/p&gt;
+
+&lt;p&gt;Listing out a couple of terms of \(2\cos(k\theta)\) and substituting \(C = 2\cos(\theta)\), we appear to have arrived at the set of polynomials \(p_k(C)\):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;\(k = 1\) gives \(2\cos(\theta) = C\) which matches what we derived for \(p_1(C)\).&lt;/li&gt;
+  &lt;li&gt;\(k = 2\) gives \(2\cos(2\theta) = 2(2\cos^2(\theta) - 1) = 2(\frac{1}{2}C^2 - 1) = C^2 - 2\) which matches what we derived for \(p_2(C)\).&lt;/li&gt;
+  &lt;li&gt;\(k = 3\) gives \(2\cos(3\theta) = 2(4\cos^3(\theta) - 3\cos(\theta)) = 2(\frac{1}{2}C^3 - \frac{3}{2}C) = C^3 - 3C\) which matches what we derived for \(p_3(C)\).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This method appears to work so long as we have a way of calculating \(2\cos(k\theta)\). To make it easier, let’s refer to the expansion of this cosine \(k\)-angle formula as \(T_k(\cos{\theta})\) where \(T_k(x) \in \mathbb{Z}[x]\) is the \(k\)th &lt;em&gt;Chebyshev polynomial&lt;/em&gt;. But how do we calculate this polynomial?&lt;/p&gt;
+
+&lt;p&gt;There is an important formula from trigonometry called the &lt;em&gt;Product-to-Sum / Sum-to-Product&lt;/em&gt; formula. In terms of cosines, it means that \(\cos(\alpha + \beta) + \cos(\alpha - \beta) = 2\cos(\alpha)\sin(\beta)\). Suppose we define \(\alpha\) and \(\beta\) as \(\alpha = (k-1)\theta\) and \(\beta = \theta\) so that \(\alpha + \beta = k\theta\) and \(\alpha - \beta = (k-2)\theta\). Then, it follows that \(\cos(k\theta) + \cos((k-2)\theta) = 2\cos(\theta)\cos((k-1)\theta)\). Since $ $T_k(\cos(\theta)) = \cos(k\theta)$$, this means that:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\large{\displaystyle T_k(\cos{\theta}) + T_{k-2}(\cos{\theta}) = 2\cos(\theta)T_{k-1}(\cos{\theta})}$$
+&lt;/p&gt;
+
+&lt;p&gt;And, after some rearrangement, we obtain the following recurrence relation in terms of \(T_k(x)\):&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\large{\displaystyle \boxed{T_k(x) = 2xT_{k-1}(x) - T_{k-2}(x)}}$$
+&lt;/p&gt;
+
+&lt;p&gt;This recurrence relation is extremely similar to the one we saw earlier with \(p_k(C)\). In fact, it turns out that we can express \(p_k(C)\) in terms of \(T_k(C)\). If we multiply both sides by 2 and apply the substitution \(x = C/2\), we arrive at \(2T_k(C/2) = 2CT_{k-1}(C/2) - 2T_{k-2}(C/2)\) which easily simplifies to \(T_k(C/2) = CT_{k-1}(C/2) - T_{k-2}(C/2)\). Thus:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\large{\displaystyle \boxed{p_k(C) = 2T_{k}(C/2)}}$$
+&lt;/p&gt;
+
+&lt;p&gt;The polynomials for our rational equation ended up being the Chebyshev polynomials in disguise! Note that we assumed that \(\|C\| \leq 2\) for the purpose of solving our equation, but our conclusions ended up being more general than we intended, allowing us to safely disregard this restriction on \(C\).&lt;/p&gt;
+
+&lt;p&gt;So we’ve solved the recurrence relation! … Sort of. All we’ve actually managed to express our unknown polynomial in terms of a more well-knnown and understood polynomial. We still need to figure out how to compute \(p_k(C)\) for arbitrary \(k\), preferably without the requirement that we know all of the polynomials for degrees &lt;em&gt;less&lt;/em&gt; than \(k\).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;coefficients-of-chebyshev-polynomials&quot;&gt;Coefficients of Chebyshev Polynomials&lt;/h2&gt;
+
+&lt;p&gt;The term with degree \(n-2m\) in this polynomial will have coefficient given by the function \(b(n, m)\) and satisfies the following relation (which is just a restatement of the Chebyshev recurrence relation):&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$b(n, m) = 2b(n - 1, m) - b(n - 2, m - 1)$$
+&lt;/p&gt;
+
+&lt;p&gt;Solving this recurrence relation for \(b(n, m)\) is not a simple endeavor. Thankfully, mathematicians smarter than me have discovered the following closed-form formula:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\displaystyle b(n,m)=\left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{n}{n-m}\right)\binom{n-m}{m}$$
+&lt;/p&gt;
+
+&lt;p&gt;We can confirm that this formula does indeed work, starting with the base cases \(n = 0\), \(1\), and \(2\). These values of \(n\) yield the Chebyshev polynomials \(T_0(x) = 1\), \(T_1(x) = x\), and \(T_2(x) = 2x^2 - 1\) and the coefficients of these polynomials reflect \(b(1, 0) = 1, b(2, 0) = 2, b(2, 1) = -1\) with \(b(0, 0)\) defined to equal \(1\). Note that, by definition, \(b(n, m) = 0\) for any \(m \geq \left\lceil (n+1)/2\right\rceil\) in order to ensure there are no terms of negative degree in \(T_n(x)\) nor cause a division by zero when \(n=m\).&lt;/p&gt;
+
+&lt;p&gt;For arbitrary \(n, m \in \mathbb{N}\), we can substitute our formula for \(b(n, m)\) into the Chebyshev recurrence relation.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$b(n, m) = 2b(n - 1, m) - b(n - 2, m - 1)$$
+
+    $$\displaystyle b(n,m) =2\left(\left(-1\right)^{m}\cdot2^{\left(n-2m-2\right)}\left(\frac{n-1}{n-m-1}\right)\binom{n-m-1}{m}\right)-\left(\left(-1\right)^{m-1}\cdot2^{\left(n-2m-1\right)}\left(\frac{n-2}{n-m-1}\right)\binom{n-m-1}{m-1}\right)$$
+
+    $$\displaystyle b(n,m) = \left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{n-1}{n-m-1}\binom{n-m-1}{m}+\frac{n-2}{n-m-1}\binom{n-m-1}{m-1}\right)$$
+
+    $$\displaystyle b(n,m)=\left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{n-1}{n-m-1}\frac{\left(n-m-1\right)!}{m!\left(n-2m-1\right)!}+\frac{n-2}{n-m-1}\frac{\left(n-m-1\right)!}{\left(m-1\right)!\left(n-2m\right)!}\right)$$
+
+    $$\displaystyle b(n, m) = \left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{1}{n-m-1}\right)\left(\frac{\left(n-1\right)\left(n-2m\right)}{n-m}\frac{\left(n-m\right)!}{m!\left(n-2m\right)!}+\frac{m\left(n-2\right)}{n-m}\frac{\left(n-m\right)!}{m!\left(n-2m\right)!}\right)$$
+
+    $$\displaystyle b(n, m) = \left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{1}{n-m}\right)\left(\frac{\left(n-1\right)\left(n-2m\right) + m(n-2)}{n-m-1}\right)\binom{n-m}{m}$$
+
+    $$\displaystyle b(n, m) = \left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{1}{n-m}\right)\left(\frac{n^2 - mn - n}{n-m-1}\right)\binom{n-m}{m}$$
+
+    $$\displaystyle b(n, m) = \left(-1\right)^{m}\cdot2^{\left(n-2m-1\right)}\left(\frac{n}{n-m}\right)\binom{n-m}{m}$$
+&lt;/p&gt;
+
+&lt;p&gt;Which is indeed the correct formula.&lt;/p&gt;
+
+&lt;p&gt;In order to obtain the coefficients of \(p_n(x)\), we need only drop \(2^{n-2m-1}\) from the formula since \(p_n(C) = 2T_n(C/2)\) implies we divide the \((n-2m)\)th coefficient by \(2^{n-2m}\) and then multiply by \(2\). Thus, we have obtained the formula we have been looking for this whole time:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\displaystyle \boxed{a(n, m) = \left(-1\right)^{m}\left(\frac{n}{n-m}\right)\binom{n-m}{m}}$$
+&lt;/p&gt;
+
+&lt;p&gt;With some algebra, we can derive a formula for moving across coefficients in \(p_n(x)\) where \(n\) is held constant and \(m\) is allowed to vary.&lt;/p&gt;
+
+&lt;p&gt;Let \(\lambda(n, m)\) be the function such that \(a(n, m+1) = \lambda(n, m)a(n, m)\) with \(m\geq 0\). Then, it can be shown that:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\boxed{\lambda(n, m) = -\frac{\left(n-2m\right)\left(n-2m-1\right)}{\left(m+1\right)\left(n-m-1\right)}}$$
+&lt;/p&gt;
+
+&lt;p&gt;This formula is especially convenient and adapts well when considering coefficients modulo some prime number. Using a computer, we can use this formula to quickly generate polynomial representations of \(x^k + \dfrac{1}{x^k} = C\). Here, for instance, is \(p_{50}(x) \pmod{10^9+7}\):&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+    $$\large x^{50} - 50x^{48} + 1175x^{46} - 17250x^{44} + 177375x^{42} - 1357510x^{40} + 8021650x^{38}$$
+
+    $$\large - 37469900x^{36} + 140512125x^{34} - 427248250x^{32} + 59575653x^{30} - 148789786x^{28}$$
+
+    $$\large + 562467279x^{26} - 814144972x^{24} + 272634965x^{22} - 639918772x^{20} + 241119729x^{18}$$
+
+    $$\large - 767883493x^{16} + 736618125x^{14} - 227613750x^{12} + 50075025x^{10} - 7400250x^{8}$$
+
+    $$\large 672750x^{6} - 32500x^{4} + 625x^{2} - 2$$
+&lt;/p&gt;
+
+&lt;p&gt;Whose representation was generated by the following (pretty simple) Python code:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000000007&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ceil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;coeff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coeff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;degree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;str_rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str_rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;x^{&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;degree&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;}&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;degree&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;poly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; - &quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str_rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; + &quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We can alternatively compute \(a(n, m)\pmod{M}\) where \(M\) is prime using the following Python code:&lt;/p&gt;
+
+&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Prime sieve courtesy of stack overflow
+# https://stackoverflow.com/a/2068548
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sieve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot; Input n&amp;gt;=6, Returns a array of primes, 2 &amp;lt;= p &amp;lt; n &quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;       &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,((&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonzero&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;factorial_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;order&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rep&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;binom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;numer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;denom1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;factorial_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Merge denominators
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;denom&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Divide out numerator and denominator
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;binom_rep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;binom_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;denom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;binom_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;binom_rep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;coefficient&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;binom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;primes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;M&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We can use this code to conclude that \(a(10^7, 10^6) = 916998232\pmod{10^9 + 7}\). I would not be surprised if there is a more optimized way of calculating \(a(n, m)\) using the formula, but this is what I came up with.&lt;/p&gt;</content><author><name></name></author><summary type="html">A study of Chebyshev Polynomials and their seemingly unexpected application to the polynomial \(x^k + x^{-k}\)</summary></entry><entry><title type="html">Factoring With Geometry: Lestra’s Method</title><link href="http://localhost:4000/2022/09/11/lenstras-method.html" rel="alternate" type="text/html" title="Factoring With Geometry: Lestra’s Method" /><published>2022-09-11T00:00:00-07:00</published><updated>2022-09-11T00:00:00-07:00</updated><id>http://localhost:4000/2022/09/11/lenstras-method</id><content type="html" xml:base="http://localhost:4000/2022/09/11/lenstras-method.html">&lt;h3 id=&quot;an-introduction-to-a-fascinating-integer-factorization-algorithm-told-in-five-parts&quot;&gt;An introduction to a fascinating integer factorization algorithm, told in five parts.&lt;/h3&gt;
 
 &lt;p&gt;This article is a reformatted version of my submission to the &lt;a href=&quot;https://summerofmathexposition.substack.com/p/the-summer-of-math-exposition-is?s=r&quot;&gt;Summer of Math Exposition 2&lt;/a&gt; (SoME2) contest hosted by the YouTube creator &lt;a href=&quot;https://www.youtube.com/c/3blue1brown&quot;&gt;3Blue1Brown&lt;/a&gt;. You can find the original article &lt;a href=&quot;https://medium.com/@lextmcdowell/factoring-with-geometry-lestras-method-e34f917faf4&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;In this article, I want to tell you about one of my favorite mathematical algorithms: &lt;strong&gt;Lenstra’s method&lt;/strong&gt;. It is an algorithm for factoring large integers but it approaches the problem from a unique perspective. Though to understand how this algorithm works, I’ll need to take you on a journey through the world of number theory.&lt;/p&gt;
+&lt;p&gt;In this article, I want to tell you about one of my favorite mathematical algorithms: &lt;strong&gt;Lenstra’s method&lt;/strong&gt;. It is an algorithm for factoring large integers which approaches the problem from a unique perspective. In order to understand how this algorithm works, I’ll need to take you on a journey through the world of number theory.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;(DISCLAIMER)&lt;/strong&gt; I’ve written this article to be approachable to students from all different levels of math. As a result, the proofs below are high-level and not especially rigorous, though I strive to maintain depth and accuracy with my explanations. My goal is to build intuition and enthusiasm, but if you would like a more comprehensive, formal, and rigorous description of Lenstra’s method, I encourage you to consult the resources located at the bottom of this article.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(DISCLAIMER)&lt;/strong&gt; I’ve written this article to be approachable to students from all different levels of math. As a result, the proofs below are not especially rigorous, though I strive to maintain depth and accuracy with my explanations. My goal is to build intuition and enthusiasm, but if you would like a more comprehensive, formal, and rigorous description of Lenstra’s method, I encourage you to consult the resources located at the bottom of this article.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -14,7 +295,7 @@
 
 &lt;h2 id=&quot;part-1--in-search-of-a-factor&quot;&gt;Part 1 — In Search of a Factor&lt;/h2&gt;
 
-&lt;p&gt;Integer factorization holds an essential role in mathematics. Breaking apart a number into its component primes finds a wide array of uses across the various, seemingly disjunct, domains of mathematics. To name a few examples, in algebra, integer factorization helps mathematicians determine the possible decompositions of a finite abelian group. In number theory, crucially important theorems such as the &lt;a href=&quot;https://crypto.stanford.edu/pbc/notes/numbertheory/crt.html&quot;&gt;Chinese Remainder Theorem&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Euler%27s_theorem&quot;&gt;Euler’s Theorem&lt;/a&gt; depend upon knowing how a given number factors. The list of applications of factorization could go on and on. Factorization is one of the most powerful techniques in the mathematician’s toolkit, yet despite its profound importance, I would wager that the factorization method you were taught is &lt;em&gt;highly inefficient&lt;/em&gt;. Why is this?&lt;/p&gt;
+&lt;p&gt;Integer factorization holds an essential role in mathematics. Breaking apart a number into its component primes finds a wide array of uses across the various, seemingly disjunct, domains of mathematics. To name a few examples, in algebra, integer factorization helps mathematicians determine the possible decompositions of a finite abelian group. In number theory, crucial important theorems such as the &lt;a href=&quot;https://crypto.stanford.edu/pbc/notes/numbertheory/crt.html&quot;&gt;Chinese Remainder Theorem&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Euler%27s_theorem&quot;&gt;Euler’s Theorem&lt;/a&gt; depend upon knowing how a given number factors. The list of applications of factorization could go on and on. Factorization is one of the most powerful techniques in the mathematician’s toolkit, yet despite its profound importance, I would wager that the factorization method you were taught is &lt;em&gt;highly inefficient&lt;/em&gt;. Why is this?&lt;/p&gt;
 
 &lt;p&gt;Say we want to factor 5040. Here’s how you would probably go about it. We know that the first five prime numbers are 2, 3, 5, 7, and 11, so why don’t we try to divide 5040 by each of these numbers? 2 divides four times, 3 divides twice, 5 divides once, seven divides once, and eleven does not divide at all. Luckily for us, these happen to be the only prime factors of 5040.&lt;/p&gt;
 
@@ -29,9 +310,9 @@
 
 &lt;p&gt;This approach is known as the &lt;strong&gt;trial division algorithm&lt;/strong&gt;. It is the simplest and most straightforward of the factorization algorithms. It is the method every student is first taught and, for many, it is the last they will ever learn. But there is so much more to factoring. Perhaps understanding what is &lt;em&gt;wrong&lt;/em&gt; with the trial division algorithm serves as a good place to start on our journey.&lt;/p&gt;
 
-&lt;p&gt;The trial division method is all well and good provided that we can do two things. First, we must be able to efficiently generate a list of prime numbers. Both the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Pseudocode&quot;&gt;Sieve of Eratosthenes&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Atkin#Pseudocode&quot;&gt;Sieve of Atkin&lt;/a&gt; permit us this possibility so the first requirement is not a huge concern. That is, assuming that the number we are factoring has prime factors within our repository of primes. This caveat brings us to the second condition, which poses more of an issue. The trial division algorithm only works efficiently provided that we know that the prime factors of the number are &lt;em&gt;small&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The trial division method is all well and good provided that we can do two things. First, we must be able to efficiently generate a list of prime numbers. Both the &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Pseudocode&quot;&gt;Sieve of Eratosthenes&lt;/a&gt; and &lt;a href=&quot;https://en.wikipedia.org/wiki/Sieve_of_Atkin#Pseudocode&quot;&gt;Sieve of Atkin&lt;/a&gt; permit us this possibility so this first requirement is not a huge concern. That is, assuming that the number we are factoring has prime factors within our repository of primes. This caveat brings us to the second condition, which poses more of an issue. The trial division algorithm only works efficiently provided that we know that the prime factors of the number are &lt;em&gt;small&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Consider a very large number such as 6,755,386,553,008,134 (6 quadrillion, 755 trillion, 386 billion, 553 million, 8 thousand, and 134 — quite the mouthful, isn’t it?). It can be verified that this number is divisible by 2 and 3, but its only other prime factors are relatively large — 524,287 and 2,147,483,647. We would have to iterate through our list of primes for quite a while until we “hit” these factors. This number &lt;em&gt;could&lt;/em&gt; be factored by trial division by a computer after some time, especially since the first large prime (524,287) appears much earlier than the second (2,147,483,647), but it would be easy to conceive of a number so large that using trial division would not halt after a reasonable period of time. With trial division, we would be unnecessarily checking the divisibility of our number by a bunch of “misses” as opposed to the sparser “hits” —the numbers we actually care about. Checking divisibility like this is an incredibly wasteful process and, for numbers with exceptionally large prime factors, the trial division algorithm would take ages before it finishes.&lt;/p&gt;
+&lt;p&gt;Consider a very large number such as 6,755,386,553,008,134 (6 quadrillion, 755 trillion, 386 billion, 553 million, 8 thousand, and 134 — quite the mouthful, isn’t it?). It can be verified that this number is divisible by 2 and 3, but its only other prime factors are relatively large — 524,287 and 2,147,483,647. We would have to iterate through our list of primes for quite a while until we “hit” these factors. This number &lt;em&gt;could&lt;/em&gt; be factored by trial division by a computer after some time, especially since the first large prime (524,287) appears much earlier than the second (2,147,483,647), but it would be easy to conceive of a number so large that trial division would not halt after a reasonable period of time. With trial division, we would be unnecessarily checking the divisibility of our number by a bunch of “misses” as opposed to the sparser “hits” —the numbers we actually care about. Checking divisibility like this is an incredibly wasteful process and, for numbers with exceptionally large prime factors, the trial division algorithm would take ages before it finishes.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -53,7 +334,7 @@
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;part-2--in-search-of-a-solution&quot;&gt;Part 2 — In Search of a Solution&lt;/h2&gt;
-&lt;p&gt;In 1974, a British mathematician named John Pollard published a factoring algorithm known as \(p-1\). The power of this method comes from how it substantially reduces the total number of “misses” we consider. Proving this method relies on some algebra that may seem counterintuitive at first or like some sort of mathematical trickery — at least, it seemed that way to me at first. It is my hope that by the end of the proof it will be clear that every step was done for an important reason.&lt;/p&gt;
+&lt;p&gt;In 1974, a British mathematician named John Pollard published a factoring algorithm known as \(p-1\). The power of this method comes from how it substantially reduces the total number of “misses” we consider. Proving this method relies on some algebra that may seem counterintuitive at first or like some sort of mathematical trickery — at least, it seemed that way to me at first. It is my hope that, by the end of the proof, it will be clear that every step was done for an important reason.&lt;/p&gt;
 
 &lt;p&gt;The proof of \(p-1\) is done by means of a theorem known as &lt;strong&gt;Fermat’s Little Theorem&lt;/strong&gt;, not to be confused with its older and more infamous brother: &lt;a href=&quot;https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem&quot;&gt;Fermat’s Last Theorem&lt;/a&gt;.&lt;/p&gt;
 
@@ -71,7 +352,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Now consider what happens if we divide both sides by \(\alpha\) and raise both sides of this equation to some positive integer \(m\).&lt;/p&gt;
+&lt;p&gt;Now consider what happens if we divide both sides by \(\alpha\) and raise both sides of this equation by some positive integer \(m\).&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
     $$
@@ -215,7 +496,7 @@
 
 &lt;p&gt;And before you ask, &lt;strong&gt;no&lt;/strong&gt;. Elliptic curves are &lt;em&gt;not&lt;/em&gt; ellipses. Elliptic curves are not all that related to ellipses either - at least, based on how I will be presenting them in this article. But there &lt;em&gt;is&lt;/em&gt; a reason for this nomenclature - it is just beyond the scope of this article. In short, the term “elliptic” refers to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Elliptic_integral&quot;&gt;elliptic integrals&lt;/a&gt; used to compute the arc lengths of ellipses.&lt;/p&gt;
 
-&lt;p&gt;An elliptic curve is an equation of the form \(y^2= x^3 + ax + b\) (which I will occasionally denote by \(E_{a,b}\)). The curve is symmetric about the x-axis and bulges at the center.&lt;/p&gt;
+&lt;p&gt;An elliptic curve is an equation of the form \(y^2= x^3 + ax + b\) (which I will occasionally denote by \(E_{a,b}\)). The curve is symmetric about the x-axis and bulges at its center.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;/images/lenstra/part3_1.PNG&quot; alt=&quot;Elliptic Curve Example&quot; width=&quot;382px&quot; height=&quot;339px&quot; /&gt;
@@ -226,23 +507,23 @@
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;/images/lenstra/part3_2.PNG&quot; alt=&quot;Elliptic Curve Division&quot; width=&quot;257px&quot; height=&quot;339px&quot; /&gt;
-    &lt;h5 align=&quot;center&quot;&gt;A graph of the elliptic curve y² = x³ - 10x + 3. This time, the elliptic curve consists of two distinct components.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;A graph of the elliptic curve y² = x³ - 10x + 3. This time, the elliptic curve consists of two distinct components: the &quot;mainland&quot; curve (right) and the &quot;island&quot; curve (left).&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;When we use elliptic curves in number theory, we often want to compute points on an elliptic curve with respect to some modulus. For instance, we might want to find the set of all integers \((x, y)\) on some elliptic curve mod 10. It should be noted that, when we do this, we are only considering rational solutions to our modular elliptic curve. By taking the modulo of our elliptic curve, we don’t get a continuous curve like before, but instead, we get a seemingly random scattering of points. What’s more, our elliptic curve is &lt;em&gt;much&lt;/em&gt; smaller. Whereas before we had infinitely many real points on the curve, we now have finitely many integer points. As counter-intuitive as it seems, this scatterplot is &lt;em&gt;still&lt;/em&gt; our elliptic curve, just from the perspective of each point’s remainders. Evaluating elliptic curves in this peculiar way grants us some &lt;em&gt;very&lt;/em&gt; important properties for factoring numbers, as you will soon see.&lt;/p&gt;
+&lt;p&gt;When we use elliptic curves in number theory, we often want to compute points on an elliptic curve with respect to some modulus. For instance, we might want to find the set of all integer points \((x, y)\) on some elliptic curve mod 10. It should be noted that, when we do this, we are only considering rational solutions to our modular elliptic curve. By taking the modulo of our elliptic curve, we don’t get a continuous curve like before, but instead, we get a seemingly random scattering of points. What’s more, our elliptic curve is &lt;em&gt;much&lt;/em&gt; smaller. Whereas before we had infinitely many real points on the curve, we now have finitely many integer points. As counter-intuitive as it seems, this scatterplot is &lt;em&gt;still&lt;/em&gt; our elliptic curve, just from the perspective of each point’s remainders. Evaluating elliptic curves in this peculiar way grants us some &lt;em&gt;very&lt;/em&gt; important properties for factoring numbers, as you will soon see.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;/images/lenstra/EllipticCurveModularDemo_ManimCE_v0.15.2.gif&quot; /&gt;
-    &lt;h5 align=&quot;center&quot;&gt;An animation of the process of transforming an elliptic curve into its modular twin (or rather, a subset of points on its modular twin). Don&apos;t worry if the animation looks a little &quot;hand-wavy&quot; - it&apos;s a weird transformation. What&apos;s happening is that we identify all of the points on the original elliptic curve that are rational - capable of being written as a fraction between integers. We can then map these rational points to integer points in the modular plane using a process that will be described later on in the article.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;An animation of the process of transforming an elliptic curve into its modular twin (or more accurately a subset of points on its modular twin). Don&apos;t worry if the animation looks a little &quot;hand-wavy&quot; - it&apos;s a weird transformation. What&apos;s happening is that we identify all of the points on the original elliptic curve that are rational - whose coordinates are capable of being written as a ratio of integers. We can then map these rational points to integer points in the modular plane using a process that will be described later on in the article.&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Remember that for any elliptic curve we can construct a corresponding modular elliptic curve. We won’t be using this technique just quite yet, but it will serve us well later on, so keep it in the back of your mind for now.&lt;/p&gt;
+&lt;p&gt;Remember that, for any elliptic curve, we can construct a corresponding modular elliptic curve. We won’t be using this technique just quite yet, but it will serve us well later on.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -250,7 +531,7 @@
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;What does it mean to add? This may seem like an odd tangent considering I was just talking about curves, but providing a relatively formal definition for addition will aid us with factoring.&lt;/p&gt;
+&lt;p&gt;What does it mean to add? This may seem like an odd tangent considering I was just talking about curves, but creating a relatively formal definition for addition will aid us with factoring.&lt;/p&gt;
 
 &lt;p&gt;Well, our definition of addition is entirely dependent on what it is that we wish to add. Adding integers is different from adding complex numbers which is different from modular addition. These are relatively simple examples, but they illustrate the simple principle that even commonplace operators have different behaviors depending on the set of “things” that they act upon.&lt;/p&gt;
 
@@ -280,7 +561,7 @@
 &lt;/ul&gt;
 &lt;p align=&quot;center&quot;&gt;
     $$\large{a + (-a) = (-a) + a = e \text{ for } a \in G}$$
-    &lt;h5 align=&quot;center&quot;&gt;The definition of inverse for a group G. If our group was the set of integers with the binary operation between integers being addition, then the identity element would be the negation of the element (2&apos;s inverse would be -2 since 2 + (-2) = 0). If the binary operation was instead multiplication, then only 1 and -1 would have inverses, since all other integers would have non-integer inverses (for instance, 2&apos;s inverse would be 1/2 which is not an integer). This means that the set of integers with the addition operator forms a group, but the set of integers with the multiplication operator does not form a group.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;The definition of inverse for a group G. If our group was the set of integers with the binary operation between integers being addition, then the identity element would be the negation of the element (2&apos;s inverse would be -2 since 2 + (-2) = 0). If the binary operation was instead multiplication, then only 1 and -1 would have inverses since all other integers would have non-integer inverses (for instance, 2&apos;s inverse would be 1/2 which is not an integer). This means that the set of integers with the addition operator forms a group, but the set of integers with the multiplication operator does not form a group.&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -311,7 +592,7 @@
 
 &lt;p&gt;Now, back to elliptic curves.&lt;/p&gt;
 
-&lt;p&gt;Suppose we have two points \(P\) and \(Q\) on an elliptic curve. What would it mean to add these two points? We could try adding the \(x\) and \(y\) coordinates of each point, but this definition of point addition fail to be closed — we would not be guaranteed a point that lies on our elliptic curve. For instance, \((0,2)\) and \((1,3)\) are points on the elliptic curve \(E_{4,4}: y^2 = x^3 + 4x + 4\), but \((1,5)\) is not. Our definition for addition on an elliptic curve instead needs to satisfy the properties of an abelian group.&lt;/p&gt;
+&lt;p&gt;Suppose we have two points \(P\) and \(Q\) on an elliptic curve. What would it mean to add these two points? We could try adding the \(x\) and \(y\) coordinates of each point, but this definition of point addition fails to be closed — we would not be guaranteed a point that lies on our elliptic curve. For instance, \((0,2)\) and \((1,3)\) are points on the elliptic curve \(E_{4,4}: y^2 = x^3 + 4x + 4\), but \((1,5)\) is not. Our definition for addition on an elliptic curve instead needs to satisfy the properties of an abelian group.&lt;/p&gt;
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;/images/lenstra/part3_3.PNG&quot; width=&quot;197px&quot; height=&quot;484px&quot; /&gt;
@@ -352,7 +633,7 @@
 
 &lt;p align=&quot;center&quot;&gt;
     &lt;img src=&quot;/images/lenstra/EllipticCurveAdditionInfinityPoint_ManimCE_v0.15.2.gif&quot; /&gt;
-    &lt;h5 align=&quot;center&quot;&gt;An animation showing the addition of two points on an elliptic curve, where each point is the x-axis reflection of the other. This creates the infinity point which lies at the extremes of the vertical line joining the points.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;An animation showing the addition of two points on an elliptic curve, where each point is the x-axis reflection of the other. This creates the infinity point, which lies at the extremes of the vertical line joining the points.&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -391,7 +672,7 @@
     &lt;h5 align=&quot;center&quot;&gt;An elliptic curve in 3 variables. We often restrict X, Y, and Z to integers so that solutions (x, y) to the 2D case are rational.&lt;/h5&gt;
 &lt;/p&gt;
 
-&lt;p&gt;We describe points on this curve in homogeneous coordinates \([X : Y : Z]\). In this system, every \([X : Y : Z]\) maps to the same point in the Cartesian plane as \([kX : kY : kZ]\) for some non-zero real number \(k\). Furthermore, we omit the point \([0 : 0 : 0]\) from our coordinate system. Thus, the elliptic curve of three variables above (in homogeneous coordinates) has been projected onto the 2D plane by \(x = X/Z\) and \(y = Y/Z\); this is why the infinity point doesn’t make sense. \((0, 1, 0)\) and all of its multiples are valid solutions to the elliptic curve in homogeneous coordinates, but they undergo a strange transformation when they are projected onto the Cartesian plane because of a division by zero. Thus, in the 2D case, \((0, 1, 0)\) (and all its multiples) become the “infinity point”. In this sense, the infinity point still maintains its uniqueness since \([0 : 1 : 0]\) and \([0 : 2 : 0]\) are treated as effectively the same point. There will never be multiple infinity points, because &lt;em&gt;every&lt;/em&gt; point of the form \([0 : k : 0]\) is an infinity point.&lt;/p&gt;
+&lt;p&gt;We describe points on this curve in homogeneous coordinates \([X : Y : Z]\). In this system, every \([X : Y : Z]\) maps to the same point in the Cartesian plane as \([kX : kY : kZ]\) for some non-zero real number \(k\). Furthermore, we omit the point \([0 : 0 : 0]\) from our coordinate system. Thus, the elliptic curve of three variables above (in homogeneous coordinates) has been projected onto the 2D plane by \(x = X/Z\) and \(y = Y/Z\); this is why the infinity point doesn’t make sense. \((0, 1, 0)\) and all of its multiples are valid solutions to the elliptic curve in homogeneous coordinates, but they undergo a strange transformation when they are projected onto the Cartesian plane because of a division by zero. Thus, in the 2D case, \((0, 1, 0)\) (and all its multiples) become the “infinity point”. In this sense, the infinity point still maintains its uniqueness since \([0 : 1 : 0]\) and \([0 : 2 : 0]\) are treated as effectively the same point. There will never be multiple infinity points because &lt;em&gt;every&lt;/em&gt; point of the form \([0 : k : 0]\) is an infinity point.&lt;/p&gt;
 
 &lt;p&gt;In addition, one can also show using homogeneous coordinates that the line connecting any \(P\) and its inverse intersects at the infinity point \(O\).&lt;/p&gt;
 
@@ -453,7 +734,7 @@
 		\\
 		\large{\text{Where } m = \frac{y_Q - y_P}{x_Q - x_P} \text{ and } \beta = y_P - mx_P}
     $$
-    &lt;h5 align=&quot;center&quot;&gt;The parameters of the line PQ joining P and Q and intersects the elliptic curve at some distinct third point.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;The parameters of the line PQ joining P and Q and intersecting the elliptic curve at some distinct third point.&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -713,7 +994,7 @@
 &lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Finally, we compute \(kP\) mod \(n\) using the point addition methods I discussed earlier. Here, we can implement a simple and efficient optimization. Instead of adding our point \(k\) times which would get out of hand quickly, we can use a method of adding by doubling. To consider a small example, say we wanted to compute \(20P\). We could first take \(P\), double it (\(2P\)), double it again (\(4P\)), add P (\(5P\)), then double it twice more to get \(20P\). This requires us to do only five point addition operations instead of 19.&lt;/li&gt;
+  &lt;li&gt;Finally, we compute \(kP\) mod \(n\) using the point addition methods I discussed earlier. Here we can implement a simple and efficient optimization. Instead of adding our point \(k\) times -  which would get out of hand quickly -  we can use a method of adding by doubling. To consider a small example, say we wanted to compute \(20P\). We could first take \(P\), double it (\(2P\)), double it again (\(4P\)), add P (\(5P\)), then double it twice more to get \(20P\). This requires us to do only five point addition operations instead of 19.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p align=&quot;center&quot;&gt;
     $$
@@ -758,7 +1039,7 @@
 
 &lt;p align=&quot;center&quot;&gt;
     $$\large{O(e^{c\sqrt{\ln(p)\ln(\ln(p))}})}$$
-    &lt;h5 align=&quot;center&quot;&gt;The runtime complexity for Lenstra&apos;s method. What a mess! But notice two things: (1) the runtime is exponential, and (2) the runtime depends only on the smallest prime factor p of n. The important thing about this first observation is all factorization algorithms have exponential runtime complexity. Don&apos;t let the exponential runtime detract from the power of Lenstra&apos;s method.&lt;/h5&gt;
+    &lt;h5 align=&quot;center&quot;&gt;The runtime complexity for Lenstra&apos;s method. What a mess! But notice two things: (1) the runtime is exponential, and (2) the runtime depends only on the smallest prime factor p of n. The important thing about this first observation is all factorization algorithms have exponential runtime complexity. Don&apos;t let the exponential runtime detract from the power of Lenstra&apos;s method!&lt;/h5&gt;
 &lt;/p&gt;
 
 &lt;p&gt;Though we have reached the end of this article, this is not the end for Lenstra’s method. There are plenty of optimizations and improvements that can be made! One of the state-of-the-art elliptic curve factorization algorithms, GMP-ECM, makes several key changes to Lenstra’s original algorithm. For instance, GMP-ECM uses a different class of elliptic curves known as &lt;a href=&quot;https://en.wikipedia.org/wiki/Montgomery_curve&quot;&gt;Montgomery curves&lt;/a&gt; which have point addition formulae which end up being much faster to compute. In addition, GMP-ECM factors integers in two stages, using different smoothness bounds for each stage.&lt;/p&gt;
