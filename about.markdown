@@ -11,7 +11,7 @@ I am a huge fan of [Project Euler](https://projecteuler.net/about) and highly en
     <img src="https://projecteuler.net/profile/Luthanicus.png" alt="Project Euler Stats">
 </div>
 
-I also post arrangements and transcriptions on MuseScore. Check me out [here](https://musescore.com/user/1214651).
+I also post arrangements and transcriptions on MuseScore. Check me out [here](https://musescore.com/user/1214651)! I've also started composing original music in FL Studio. You can find my releases on [Bandcamp](https://luthanicus.bandcamp.com/)! I also have a [YouTube channel](https://www.youtube.com/@luthanicus) that I will sometimes (extremely rarely) post to.
 
 <div align="center">
     <iframe src="https://docs.google.com/document/d/e/2PACX-1vTSqGDh6OtIVpnk9MCqsxlcpIX0NA9XMTkp4oDi21kFpxTO1v9o5WU0QHwyzHt9LA/pub?embedded=true" width="640" height="480" allow="autoplay"></iframe>
