@@ -67,7 +67,7 @@ Below is a collection of various projects I have made.
     <p>
         A small interactive tool for dynamic visualization of graphs.<br>
         Code may be found <a href="https://github.com/alexander-mcdowell/GraphVisualizer">here</a>.<br>
-        Try it out for yourself <a href="/projects/GraphVisualizer/index.html">here</a>!
+        Try it out for yourself <a href="https://alexander-mcdowell.github.io/projects/GraphVisualizer/index.html">here</a>!
     </p>
 </div>
 
@@ -80,6 +80,6 @@ Below is a collection of various projects I have made.
     <p>
         A tool for procedural generation of terrain using Perlin Noise, created as the final project for a computer graphics class at UCI.<br>
         Code may be found <a href="https://github.com/alexander-mcdowell/CS114-Final-Project">here</a>.<br>
-        Try it out for yourself <a href="/projects/CS114-Final-Project/final.html">here</a>!
+        Try it out for yourself <a href="https://alexander-mcdowell.github.io/projects/CS114-Final-Project/final.html">here</a>!
     </p>
 </div>
