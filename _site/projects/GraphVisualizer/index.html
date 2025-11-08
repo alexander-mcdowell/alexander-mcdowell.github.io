@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<title>Graph Visualizer</title>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="css/graphvisualizer.css" rel="stylesheet">
+        <script>
+            MathJax =  {
+                tex: {
+                    inlineMath: {'[+]': [['$', '$']]}
+                }
+            }
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+        <script src="js/math.js"></script>
+        <script src="js/disjoint_set.js"></script>
+        <script src="js/graph.js"></script>
+        <script src="js/graph_interface.js"></script>
+        <script src="js/graph_visualizer.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Graph Visualizer</h1>
+            <p>
+                <em>Developed by Alexander McDowell</em>
+                <img src="assets/github-mark.png" width="25px" height="25px"/>
+                <a href="https://github.com/alexander-mcdowell/">alexander-mcdowell</a>
+            </p>
+        </div>
+
+        <!-- Graph Menu -->
+        <div class="tab">
+            <button class="tablinks" onclick="setMode(event, 'undirected-graph')">Undirected Graph</button>
+            <button class="tablinks" onclick="setMode(event, 'directed-graph')">Directed Graph</button>
+        </div>
+
+        <!-- Graph Menu Options -->
+        <div id="undirected-graph" class="tabcontent">
+            <div style = "margin-top: 10px">
+                <canvas id="canvas0" width="640" height="480"></canvas>
+            </div>
+            <div style = "margin-top: 10px">
+                <button id="reset-button0" onclick="resetGraph(event)">Reset Graph</button>
+                
+                <label id="size-dropdown0-label" for="dropdown0">Canvas Size</label>
+                <select id="size-dropdown0"></select>
+                
+                <br></br>
+                <label id="hide-weights-label" for="hide-weights">Hide Edge Weights:</label>
+                <input type="checkbox" id="hide-weights" onchange="toggleWeightVisibility(event)"></input>
+
+                <h3>Shortest Path:</h3>
+                <label id="sp-start0-label" for="sp-start0">Start:</label>
+                <input type="text" id="sp-start0"></input>
+                <label id="sp-end0-label" for="sp-end0">End:</label>
+                <input type="text" id="sp-end0"></input>
+                <button id="sp-button0" onclick="getShortestPath(event)">Compute Shortest Path</button>
+                <div id="sp-div0"></div>
+            </div>
+            <hr>
+            <div id="connected-components0">
+                <h3>Connected Components:</h3>
+                <table id="connected-components-list0"></table>
+            </div>
+        </div>
+        <div id="directed-graph" class="tabcontent">
+            <div style = "margin-top: 10px">
+                <canvas id="canvas1" width="640" height="480"></canvas>
+            </div>
+            <div style = "margin-top: 10px">
+                <button id="reset-button1" onclick="resetGraph(event)">Reset Graph</button>
+                <label id="size-dropdown1-label" for="dropdown1">Canvas Size</label>
+                <select id="size-dropdown1"></select>
+
+                <h3>Shortest Path:</h3>
+                <label id="sp-start1-label" for="sp-start1">Start:</label>
+                <input type="text" id="sp-start1"></input>
+                <label id="sp-end1-label" for="sp-end1">End:</label>
+                <input type="text" id="sp-end1"></input>
+                <button id="sp-button1" onclick="getShortestPath(event)">Compute Shortest Path</button>
+                <div id="sp-div1"></div>
+            </div>
+            <hr>
+        </div>
+
+        <!-- Description -->
+        <div id="description">
+            <h2>Description</h2>
+            <p>
+                This is a proof of concept for an interactive tool for visualizing small graphs. This is created entirely without the aid of external libraries as an exercise in Javascript and Graph Theory.
+                In future revisions, I plan on adding planarity checking, detection of strongly connected components, and Finite Discrete Markov Chain support.<br/>
+            </p>
+            <h4>Features:</h4>
+            <ul>
+                <li>Dynamic addition and removal of vertices and edges as well as modification of weights.</li>
+                <li>Dynamic tracking of connected components for undirected graphs.</li>
+                <li>Shortest path computation.</li>
+            </ul>
+            <h2>Instructions</h2>
+            <ul>
+                <li>Left click on one of the above options to use the graph interface.</li>
+                <li>Inside the interface, you may left click to add a new vertex.</li>
+                <li>Left click on an existing vertex to select it and left click on a selected vertex to deselect it.</li>
+                <li>Left click on two vertices to join them by an edge. You may also join a selected vertex to a new vertex by left clicking on an empty space.</li>
+                <li>Right click on an existing vertex to delete it.</li>
+                <li>Left click on an edge weight to change its value. If the new edge weight is 0, then the edge will be deleted. Negative edge weights for undirected graphs are not permitted as this would create a negative cycle.</li>
+                <li>As vertices and edges are added, removed, or modified, you can track and change information about the graph in the space below the canvas.</li>
+                <li>Hit the "Reset Graph" button to delete all vertices and edges from the graph.</li>
+            </ul>
+        </div>
+    </body>
+</html>

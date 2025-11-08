@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Alexander McDowell’s Domain of Mathematics | This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</title>
+<title>Projects | Alexander McDowell’s Domain of Mathematics</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Alexander McDowell’s Domain of Mathematics" />
+<meta property="og:title" content="Projects" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made." />
 <meta property="og:description" content="This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<link rel="canonical" href="http://localhost:4000/projects/" />
+<meta property="og:url" content="http://localhost:4000/projects/" />
 <meta property="og:site_name" content="Alexander McDowell’s Domain of Mathematics" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Alexander McDowell’s Domain of Mathematics" />
+<meta property="twitter:title" content="Projects" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.","headline":"Alexander McDowell’s Domain of Mathematics","name":"Alexander McDowell’s Domain of Mathematics","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.","headline":"Projects","url":"http://localhost:4000/projects/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alexander McDowell&apos;s Domain of Mathematics" /></head>
 <body><header class="site-header" role="banner">
@@ -36,31 +36,97 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><p>Welcome to my Domain of Mathematics! Please check the “About” and “Projects” page. Below you will find a collection of my mathematical writings.</p>
-<h2 class="post-list-heading">Posts</h2>
-    <ul class="post-list"><li><span class="post-meta">Dec 14, 2023</span>
-        <h3>
-          <a class="post-link" href="/2023/12/14/totient-summatory.html">
-            On the Average Order of the Totient Summatory Function
-          </a>
-        </h3></li><li><span class="post-meta">Dec 14, 2023</span>
-        <h3>
-          <a class="post-link" href="/2023/12/14/chebyshev.html">
-            Application of Chebyshev Polynomials to the Rational Equation x^k + x^-k
-          </a>
-        </h3></li><li><span class="post-meta">Sep 11, 2022</span>
-        <h3>
-          <a class="post-link" href="/2022/09/11/lenstras-method.html">
-            Factoring With Geometry: Lestra’s Method
-          </a>
-        </h3></li><li><span class="post-meta">Sep 9, 2022</span>
-        <h3>
-          <a class="post-link" href="/2022/09/09/roulettes.html">
-            Roulettes: The Mathematics of Rolling
-          </a>
-        </h3></li></ul>
+        <article class="post">
 
-    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+  <header class="post-header">
+    <h1 class="post-title">Projects</h1>
+  </header>
+
+  <div class="post-content">
+    <style>
+    .project-name {
+        display: inline-block;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    .project-name button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .project-name button:hover {
+        background-color: #ddd;
+    }
+
+    .project-name button.active {
+        background-color: #ccc;
+    }
+
+    .project-content {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        background-color: #fdfdfd;
+    }
+</style>
+
+<script>
+    function toggleProject(i) {
+        let project_names = document.getElementsByClassName("project-name");
+        let project_content = document.getElementsByClassName("project-content");
+
+        if (project_content[i].style.display == "block") {
+            project_content[i].style.display = "none";
+            project_names[i].className = project_names[i].className.replace(" active", "");
+        } else {
+            project_content[i].style.display = "block";
+            project_names[i].className += " active";
+        }
+    }
+</script>
+
+<p>Below is a collection of various projects I have made.</p>
+<hr />
+<p><br /></p>
+
+<!-- Graph Visualizer -->
+<div class="project-name" id="graph-visualizer">
+    <button onclick="toggleProject(0)">Graph Visualizer</button>
+</div>
+<div class="project-content" id="graph-visualizer-content">
+    <img src="graph-image.png" />
+    <p>
+        A small interactive tool for dynamic visualization of graphs.<br />
+        Code may be found <a href="https://github.com/alexander-mcdowell/GraphVisualizer">here</a>.<br />
+        Try it out for yourself <a href="/projects/GraphVisualizer/index.html">here</a>!
+    </p>
+</div>
+
+<!-- Perlin Noise -->
+<div class="project-name" id="perlin-noise">
+    <button onclick="toggleProject(1)">Perlin Noise Explorer</button>
+</div>
+<div class="project-content" id="perlin-noise-content">
+    <img src="perlin-image.png" />
+    <p>
+        A tool for procedural generation of terrain using Perlin Noise, created as the final project for a computer graphics class at UCI.<br />
+        Code may be found <a href="https://github.com/alexander-mcdowell/CS114-Final-Project">here</a>.<br />
+        Try it out for yourself <a href="/projects/CS114-Final-Project/final.html">here</a>!
+    </p>
+</div>
+
+  </div>
+
+</article>
 
       </div>
     </main><footer class="site-footer h-card">
