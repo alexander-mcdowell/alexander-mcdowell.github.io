@@ -13,3 +13,5 @@ kramdown:
 theme: minima
 plugins:
   - jekyll-feed
+
+exclude: ['README.md', 'projects/CS114-Final-Project/README.md', 'projects/GraphVisualizer/README.md']
