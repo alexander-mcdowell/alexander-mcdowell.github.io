@@ -1,0 +1,29 @@
+body {
+    background-color: #ddf5e9;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 2px solid #003C1E;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+}
+
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+}
+
+li {
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+}
+
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', sans-serif;
+    font-size: large;
+}

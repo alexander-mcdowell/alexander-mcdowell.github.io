@@ -5,3 +5,7 @@ url = https://github.com/alexander-mcdowell/GraphVisualizer
 [submodule "projects/CS114-Final-Project"]
 path = projects/CS114-Final-Project
 url = https://github.com/alexander-mcdowell/CS114-Final-Project
+
+[submodule "projects/ShenzhenSolitaire"]
+path = projects/ShenzhenSolitaire
+url = https://github.com/alexander-mcdowell/ShenzhenSolitaire

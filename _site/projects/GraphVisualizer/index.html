@@ -29,6 +29,34 @@
             </p>
         </div>
 
+        <hr>
+
+        <!-- Description -->
+        <div id="description">
+            <h2>Description</h2>
+            <p>
+                This is a proof of concept for an interactive tool for visualizing small graphs. This is created entirely without the aid of external libraries as an exercise in Javascript and Graph Theory.
+                In future revisions, I plan on adding planarity checking, detection of strongly connected components, and Finite Discrete Markov Chain support.<br/>
+            </p>
+            <h4>Features:</h4>
+            <ul>
+                <li>Dynamic addition and removal of vertices and edges as well as modification of weights.</li>
+                <li>Dynamic tracking of connected components for undirected graphs.</li>
+                <li>Shortest path computation.</li>
+            </ul>
+            <h2>Instructions</h2>
+            <ul>
+                <li>Left click on one of the above options to use the graph interface.</li>
+                <li>Inside the interface, you may left click to add a new vertex.</li>
+                <li>Left click on an existing vertex to select it and left click on a selected vertex to deselect it.</li>
+                <li>Left click on two vertices to join them by an edge. You may also join a selected vertex to a new vertex by left clicking on an empty space.</li>
+                <li>Right click on an existing vertex to delete it.</li>
+                <li>Left click on an edge weight to change its value. If the new edge weight is 0, then the edge will be deleted. Negative edge weights for undirected graphs are not permitted as this would create a negative cycle.</li>
+                <li>As vertices and edges are added, removed, or modified, you can track and change information about the graph in the space below the canvas.</li>
+                <li>Hit the "Reset Graph" button to delete all vertices and edges from the graph.</li>
+            </ul>
+        </div>
+
         <!-- Graph Menu -->
         <div class="tab">
             <button class="tablinks" onclick="setMode(event, 'undirected-graph')">Undirected Graph</button>
@@ -82,32 +110,6 @@
                 <div id="sp-div1"></div>
             </div>
             <hr>
-        </div>
-
-        <!-- Description -->
-        <div id="description">
-            <h2>Description</h2>
-            <p>
-                This is a proof of concept for an interactive tool for visualizing small graphs. This is created entirely without the aid of external libraries as an exercise in Javascript and Graph Theory.
-                In future revisions, I plan on adding planarity checking, detection of strongly connected components, and Finite Discrete Markov Chain support.<br/>
-            </p>
-            <h4>Features:</h4>
-            <ul>
-                <li>Dynamic addition and removal of vertices and edges as well as modification of weights.</li>
-                <li>Dynamic tracking of connected components for undirected graphs.</li>
-                <li>Shortest path computation.</li>
-            </ul>
-            <h2>Instructions</h2>
-            <ul>
-                <li>Left click on one of the above options to use the graph interface.</li>
-                <li>Inside the interface, you may left click to add a new vertex.</li>
-                <li>Left click on an existing vertex to select it and left click on a selected vertex to deselect it.</li>
-                <li>Left click on two vertices to join them by an edge. You may also join a selected vertex to a new vertex by left clicking on an empty space.</li>
-                <li>Right click on an existing vertex to delete it.</li>
-                <li>Left click on an edge weight to change its value. If the new edge weight is 0, then the edge will be deleted. Negative edge weights for undirected graphs are not permitted as this would create a negative cycle.</li>
-                <li>As vertices and edges are added, removed, or modified, you can track and change information about the graph in the space below the canvas.</li>
-                <li>Hit the "Reset Graph" button to delete all vertices and edges from the graph.</li>
-            </ul>
         </div>
     </body>
 </html>

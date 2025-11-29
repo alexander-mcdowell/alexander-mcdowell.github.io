@@ -83,7 +83,9 @@ function resizeCanvas(w, h) {
 function resetGraph(event) {
     if (graphMode == -1) return;
     graphInterfaces[graphMode] = new GraphInterface(graphInterfaces[graphMode].getMode);
-    while (componentLists[graphMode].firstChild) componentLists[graphMode].removeChild(componentLists[graphMode].lastChild);
+    if (graphMode==0) {
+        while (componentLists[graphMode].firstChild) componentLists[graphMode].removeChild(componentLists[graphMode].lastChild);
+    }
     window.requestAnimationFrame(draw);
 }
 

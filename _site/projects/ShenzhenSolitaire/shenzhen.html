@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<title>Shenzhen Solitaire</title>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <link href="shenzhen.css" rel="stylesheet">
+
+        <script>
+            MathJax =  {
+                tex: {
+                    inlineMath: {'[+]': [['$', '$']]}
+                }
+            }
+        </script>
+        
+        <script src="shenzhen.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+    </body>
+</html>
+<body>
+    <h1>Shenzhen Solitaire</h1>
+
+    <p>
+        <em>Web port developed by Alexander McDowell</em>
+        <img src="github-mark.png" width="25px" height="25px"/>
+        <a href="https://github.com/alexander-mcdowell/">alexander-mcdowell</a><br>
+        <em>Originally from <a href="https://store.steampowered.com/app/504210/SHENZHEN_IO/">SHENZHEN I/O</a> developed by Zach Barth / Zachtronics</em>
+    </p>
+    
+    <hr>
+
+    <canvas id="canvas" width="960" height="640"></canvas>
+    <button onclick="resetGame();">New Game</button>
+    <p id="win-counter"></p>
+
+    <hr>
+
+    <h2>How to Play</h2>
+    <div id="how-to-play">
+        <p>
+            To win Shenzhen Solitaire, you must:
+        <p>
+            <ol>
+                <li>Stack all of the numbered cards in ascending order into three piles in the top right corner.</li>
+                <li>Move the flower card to its pile in the top right.</li>
+                <li>Consolidate all dragons to the free spaces in the top left.</li>
+            </ol>
+        <p>
+            Note that "ascending" / "descending" order must include all numbers 1-9.
+        </p>
+
+        <p>
+            Numbered cards must be stacked in descending order and alternating color.<br>
+            A numbered card must be moved to a free space or a numbered card one more than it with different color.<br>
+            Any stack of descending and alternating cards may be moved.<br>
+        </p>
+
+        <p>
+            Dragon cards are represented by the symbols <span style="color: #A10F00;">中</span>, <span style="color: #289664;">發</span>, and <span style="color: #0F0F0F;">▯</span> and can only be moved to a free space.<br>
+            If all dragon cards are visible and there is an available free space in the top left, the corresponding dragon button will light up.<br>
+            Pressing the button will consolidate all dragons of that color and "lock" the free space, preventing any more cards from being placed.<br>
+        </p>
+
+        <p>
+            The flower card, represented by the symbol <span style="color: #A10F00;">❀</span>, may only move to the flower space in the top right.
+        </p>
+
+        <p>
+            An "auto-move" algorithm will automatically move cards that can move to the sorted pile without making the game impossible.
+        </p>
+    </div>
+</body>
