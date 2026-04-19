@@ -4,7 +4,9 @@ title: Music
 permalink: /music/
 ---
 
-As a musician, I play the viola/violin and have for over ten years. Currently, I am teaching myself piano and drums. Over the past couple of years, I have made several arrangements and compositions, some of which have become fairly popular.
+As a musician, I play the viola/violin and have for over ten years. Currently, I am teaching myself piano and drums.
+
+Over the past couple of years, I have made several arrangements and compositions, some of which have become fairly popular.
 
 <div style="border-top: 1px solid black; border-bottom: 1px solid black">
     <h3 align="center"><b>Arrangements</b></h3>
