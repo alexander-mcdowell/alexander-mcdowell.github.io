@@ -128,6 +128,20 @@ function init() {
     canvas.addEventListener("mousedown", mouseDownEvent);
     canvas.addEventListener("mouseup", mouseUpEvent);
     canvas.addEventListener("mousemove", mouseMoveEvent);
+    canvas.addEventListener("mouseleave", mouseLeaveEvent);
+
+    canvas.addEventListener("touchstart", (event) => {
+        event.preventDefault();
+        mouseDownEvent(event);
+    });
+    canvas.addEventListener("touchend", (event) => {
+        event.preventDefault();
+        mouseUpEvent(event);
+    });
+    canvas.addEventListener("touchmove", (event) => {
+        event.preventDefault();
+        mouseMoveEvent(event);
+    });
 
     if (canvas.getContext) {
         context = canvas.getContext("2d");
@@ -292,8 +306,10 @@ function updateDragonButton() {
     // Update corresponding button flag
     for (let i = 0; i < 3; i++) {
         if (dragonCounts[i] == 4) {
+            // Fill first available spot
             let available = false;
             for (let j = 0; j < 3; j++) {
+                if (isLocked[j]) continue;
                 if (dragonPile[j] == null || 
                     (dragonPile[j].color == i && dragonPile[j].label == "D")) {
                     available = true;
@@ -624,7 +640,11 @@ function autoMove() {
 }
 
 function mouseDownEvent(event) {
-    mousePos = [event.offsetX, event.offsetY];
+    if (event.type == "mousedown") mousePos = [event.offsetX, event.offsetY];
+    else {
+        var rect = event.target.getBoundingClientRect();
+        mousePos = [event.targetTouches[0].clientX - rect.left, event.targetTouches[0].clientY - rect.top];
+    }
 
     // Check if we are clicking on a button
     let x = Math.round(leftPileX + 3.5 * (cardWidth + pileSpacing));
@@ -669,7 +689,13 @@ function mouseDownEvent(event) {
 }
 
 function mouseUpEvent(event) {
-    mousePos = [event.offsetX, event.offsetY];
+    if (event.type == "mouseup") mousePos = [event.offsetX, event.offsetY];
+    else {
+        console.log(event.targetTouches);
+        var rect = event.target.getBoundingClientRect();
+        mousePos = [event.changedTouches[0].clientX - rect.left, event.changedTouches[0].clientY - rect.top];
+    }
+
     if (selectedStack.length == 0) return;
 
     let pos = canPlace(selectedStack[0], mousePos[0], mousePos[1]);
@@ -718,9 +744,8 @@ function mouseUpEvent(event) {
         }
 
         // Update movability of cards below the newly revealed card at the old location
-        let i = oldCardLoc[0];
-        if (oldCardLoc != null) {
-            console.log("sklbiobit");
+        if (oldCardLoc != null && oldCardLoc[0] != "D") {
+            let i = oldCardLoc[0];
             let movable = true;
             for (let j = piles[i].length-1; j >= 0; j--) {
                 if (j+1 < piles[i].length) {
@@ -776,12 +801,58 @@ function mouseUpEvent(event) {
 }
 
 function mouseMoveEvent(event) {
+    let newX, newY;
+    if (event.type == "mousemove") {
+        newX = event.offsetX;
+        newY = event.offsetY;
+    }
+    else {
+        var rect = event.target.getBoundingClientRect();
+        newX = event.targetTouches[0].clientX - rect.left;
+        newY = event.targetTouches[0].clientY - rect.top;
+    }
+
     for (let card of selectedStack) {
-        card.x += event.offsetX - mousePos[0];
-        card.y += event.offsetY - mousePos[1];
+        card.x += newX - mousePos[0];
+        card.y += newY - mousePos[1];
         draw();
     }
-    mousePos = [event.offsetX, event.offsetY];
+    mousePos = [newX, newY];
+}
+
+function mouseLeaveEvent(event) {
+    if (selectedStack.length == 0) return;
+    // If we have selected a card, return it to the original position
+    // Return to dragon pile
+    if (oldCardLoc[0] == "D") {
+        dragonPile[parseInt(oldCardLoc[1])] = selectedStack[0];
+
+        // Restore previous location
+        selectedStack[0].loc = oldCardLoc;
+        selectedStack[0].x = oldCardPos[0];
+        selectedStack[0].y = oldCardPos[1];
+    }
+    // Return to its main pile
+    else {
+        // Restore previous location
+        let j = 0;
+        for (let card of selectedStack) {
+            card.loc = [oldCardLoc[0], oldCardLoc[1] + j];
+            card.x = leftPileX + card.loc[0] * (cardWidth + pileSpacing);
+            card.y = leftPileY + card.loc[1] * cardOverlap;
+            
+            piles[oldCardLoc[0]].push(card);
+            j += 1;
+        }
+
+        // Restore movability of the card below, if it exists.
+        if (oldCardLoc[1] != 0) {
+            piles[oldCardLoc[0]][oldCardLoc[1] - 1].movable = oldCardMovability;
+        }
+    }
+
+    selectedStack = [];
+    draw();
 }
 
 function draw() {
