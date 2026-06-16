@@ -28,6 +28,7 @@ As well, I arranged two pieces for Symphonic Orchestra as part of the Euphonic V
 I have a few original compositions, with more soon to come!
 - [Morphism](https://musescore.com/user/1214651/scores/31857419) --- a piece for jazz and rock ensemble. I'm quite proud of this one.
 - [Inhale](https://drive.google.com/file/d/1QNuZZkbnOMx5ikcpq0SuvNwSSHMGx39y/view?usp=drive_link) --- a piece I made for an electronic music class at the College of San Mateo. All instruments, with the exception of the drum kit, came from recorded sounds, such as piano notes, metallic banging, sibilance, and soap squelches.
+- [Revelation](https://drive.google.com/drive/folders/1jHHAg-51fp0Ec5K96q7bdPiUK53MLzRx) --- a piece I made as a final project for the aforementioned electronic music class. I think it's compositionally one of best works and I'm a huge fan of the lead and Rhodes piano. The mixing could use some work, but it was made relatively quickly.
 - [Greener Pastures](https://musescore.com/user/1214651/scores/33467747/s/F5jybS) --- a piece created for a friend's art challenge. The theme of the challenge was "Solarpunk".
 - [Oath of Hippocrates](https://drive.google.com/file/d/14-VLdcvNzw8w3M6IN6yqULHfF2Rq14OZ/view?usp=sharing) --- a short piece created as part of the same challenge. The theme of the challenge was "Biopunk".
 - [A Fair Trade...?](https://musescore.com/user/1214651/scores/22853044) --- a short piece created as the shop theme for the roguelike deckbuilder [*Grimm's Gambit*](https://celestialflair.itch.io/grimms-gambit)
