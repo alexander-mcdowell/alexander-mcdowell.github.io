@@ -1,4 +1,4 @@
-title: Alexander McDowell's Domain of Mathematics
+title: Alexander's Domain of Mathematics
 email: lextmcdowell@gmail.com
 description: >-
   This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.
@@ -13,6 +13,7 @@ kramdown:
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 exclude: ['README.md',
           'projects/CS114-Final-Project/README.md',
