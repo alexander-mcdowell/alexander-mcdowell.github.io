@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-16T17:00:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alexander’s Domain of Mathematics</title><subtitle>This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</subtitle><entry><title type="html">On the Average Order of the Totient Summatory Function</title><link href="http://localhost:4000/2023/12/14/totient-summatory.html" rel="alternate" type="text/html" title="On the Average Order of the Totient Summatory Function" /><published>2023-12-14T00:00:00-08:00</published><updated>2023-12-14T00:00:00-08:00</updated><id>http://localhost:4000/2023/12/14/totient-summatory</id><content type="html" xml:base="http://localhost:4000/2023/12/14/totient-summatory.html"><![CDATA[<p>This blog post serves to highlight a paper I recently wrote for a mathematics writing course at UCI. I wanted to feature it since I found the topic very interesting to both read and write about. I may write about some of the topics in greater detail in the future (specifically lattice point visibility in arbitrary regions).</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-06-18T20:50:58-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Alexander’s Domain of Mathematics</title><subtitle>This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</subtitle><entry><title type="html">How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis</title><link href="http://localhost:4000/2026/06/18/test.html" rel="alternate" type="text/html" title="How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis" /><published>2026-06-18T00:00:00-07:00</published><updated>2026-06-18T00:00:00-07:00</updated><id>http://localhost:4000/2026/06/18/test</id><content type="html" xml:base="http://localhost:4000/2026/06/18/test.html"><![CDATA[<h1 id="preface">Preface</h1>
+
+<p>The purpose of this blog post is to present a broad overview of undegraduate-level abstract algebra from an alternative perspective. Often, fundamental algebraic structures — most notably groups, rings/modules, and fields — are presented in purely abstract and formal terms. This is essential for providing a logical and rigorous foundation for the discipline, but, at least as it was for me as an undergrad, it fails to explain <em>why</em> these structures were invented in the first place and, more importantly, <em>why</em> they are defined the way they are and not some other way.</p>
+
+<p>Simply put, I want to reframe abstract algebra, specifically Ring and Field Theory, as the branch of mathematics concerned with creating new number systems, understanding their properties and limitations, and how the <em>insolvability</em> of various problems in these number system grants us the ability to create new number systems.</p>
+
+<p>When I talk about creating new number systems, I do not mean substituting one symbol for another, such as replacing the Arabic numerals $1, 2, 3, 4…$ with Chinese characters 一, 二, 三, 四, etc. or Roman numerals <em>I, II, III, IV</em> or any other real or fictitious set of symbols. What I mean is extending an existing number system, such as the integers, by new numbers with desirable properties absent from the original number system. A classic example of this is the complex numbers: we take the existing real numbers and simply add in a new “number” $i$ which satisfies $i^2 = -1$. But, this explanation is unsatisfying. How can we just make up a new number like this? What does $i$ even mean? What’s stopping us from adding whatever “number” we want satisfying and properties we desire? How can we guarantee this number system is <span class="annotated">consistent<span class="popup">A number system is consistent if it has no logical contradictions</span></span>?</p>
+
+<p>This will be a long read, as it is no easy task to condense hundreds and hundreds of pages of dense mathematical texts spanning algebra, analysis, and number theory into a single article. You can find links to the major sections below.</p>
+
+<div align="center" style="background: #c4c4c4; border: 2px solid black; border-radius: 10px; margin-bottom: 20px">
+    <h4>
+        <p>
+            <a href="#the-integers">The Integers $\mathbb{Z}$</a><br />
+            <a href="#the-rationals">The Rationals $\mathbb{Q}$</a><br />
+            <a href="#the-reals">The Reals $\mathbb{R}$</a><br />
+            <a href="#the-complex-numbers-algebraic-closure">The Complex Numbers $\mathbb{C}$ and Algebraic Closure</a><br />
+            <a href="#rings-fields-field-extensions">Rings, Fields and Field Extensions</a><br />
+            <a href="#quaternions-generalized-complex-numbers">Quaternions and Generalized Complex Numbers</a><br />
+            <a href="#finite-fields">$\mathbb{F}_p$ and Finite Fields</a><br />
+            <a href="#p-adics">$p$-adics</a><br />
+            <a href="#what-next">What's Next?</a><br />
+        </p>
+    </h4>
+</div>
+
+<p>May this article teach you something new, elucidate a concept you’ve been grappling with, or just simply be a fun read.</p>
+
+<hr />
+
+<p><a name="the-integers"></a></p>
+
+<h1 id="the-integers-mathbbz">The Integers $\mathbb{Z}$</h1>
+
+<hr />
+
+<p><a name="the-rationals"></a></p>
+
+<h1 id="the-rationals-mathbbq">The Rationals $\mathbb{Q}$</h1>
+
+<hr />
+
+<p><a name="the-reals"></a></p>
+
+<h1 id="the-real-numbers-mathbbr">The Real Numbers $\mathbb{R}$</h1>
+
+<hr />
+
+<p><a name="the-complex-numbers-algebraic-closure"></a></p>
+
+<h1 id="the-complex-numbers-mathbbc-and-algebraic-closure">The Complex Numbers $\mathbb{C}$ and Algebraic Closure</h1>
+
+<hr />
+
+<p><a name="rings-fields-field-extensions"></a></p>
+
+<h1 id="rings-fields-and-field-extensions">Rings, Fields and Field Extensions</h1>
+
+<hr />
+
+<p><a name="quaternions-generalized-complex-numbers"></a></p>
+
+<h1 id="quaternions-and-generalized-complex-numbers">Quaternions and Generalized Complex Numbers</h1>
+
+<hr />
+
+<p><a name="finite-fields"></a></p>
+
+<h1 id="mathbbf_p-and-finite-fields">$\mathbb{F}_p$ and Finite Fields</h1>
+
+<hr />
+
+<p><a name="p-adics"></a></p>
+
+<h1 id="p-adics">$p$-adics</h1>
+
+<hr />
+
+<p><a name="what-next"></a></p>
+
+<h1 id="whats-next">What’s Next?</h1>]]></content><author><name></name></author><summary type="html"><![CDATA[Preface]]></summary></entry><entry><title type="html">On the Average Order of the Totient Summatory Function</title><link href="http://localhost:4000/2023/12/14/totient-summatory.html" rel="alternate" type="text/html" title="On the Average Order of the Totient Summatory Function" /><published>2023-12-14T00:00:00-08:00</published><updated>2023-12-14T00:00:00-08:00</updated><id>http://localhost:4000/2023/12/14/totient-summatory</id><content type="html" xml:base="http://localhost:4000/2023/12/14/totient-summatory.html"><![CDATA[<p>This blog post serves to highlight a paper I recently wrote for a mathematics writing course at UCI. I wanted to feature it since I found the topic very interesting to both read and write about. I may write about some of the topics in greater detail in the future (specifically lattice point visibility in arbitrary regions).</p>
 
 <div align="center">
     <iframe src="https://drive.google.com/file/d/10Lbb6RAQUMiXCY-oA8BpnvwxnWRpOt-V/preview" width="640" height="480" allow="autoplay"></iframe>

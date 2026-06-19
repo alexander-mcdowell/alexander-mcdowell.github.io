@@ -9,4 +9,32 @@
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
+
+  <style type="text/css">
+    .annotated {
+        border-bottom: 1px dashed #888;
+        cursor: help;
+        position: relative;
+    }
+
+    .popup {
+        display: none;
+        position: absolute;
+        bottom: calc(100%);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #c4c4c4;
+        color: #000;
+        padding: 6px 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        z-index: 100; /* Ensures that the window is always at the top */
+        pointer-events: none;
+    }
+
+    .annotated:hover .popup {
+        display: block;
+    }
+  </style>
 </head>
