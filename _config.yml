@@ -12,10 +12,13 @@ kramdown:
 
 theme: minima
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
 
 exclude: ['README.md',
           'projects/CS114-Final-Project/README.md',
           'projects/GraphVisualizer/README.md',
-          'projects/ShenzhenSolitaire/README.md']
+          'projects/ShenzhenSolitaire/README.md',
+          .sass-cache/,
+          .jekyll-cache/,
+          Gemfile,
+          Gemfile.lock]
