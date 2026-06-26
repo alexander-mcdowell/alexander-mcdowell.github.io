@@ -2,22 +2,23 @@
 <html lang="en"><head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis | Alexander’s Domain of Mathematics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>How To Create New Numbers | Alexander’s Domain of Mathematics</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis" />
+<meta property="og:title" content="How To Create New Numbers" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Preface" />
-<meta property="og:description" content="Preface" />
+<meta name="twitter:description" property="og:description" content="Preface" />
 <link rel="canonical" href="http://localhost:4000/2026/06/18/how-to-create-new-numbers.html" />
 <meta property="og:url" content="http://localhost:4000/2026/06/18/how-to-create-new-numbers.html" />
 <meta property="og:site_name" content="Alexander’s Domain of Mathematics" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-06-18T00:00:00-07:00" />
+<meta property="article:modified_time" content="2026-06-18T00:00:00-07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis" />
+<meta name="twitter:title" content="How To Create New Numbers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-18T00:00:00-07:00","datePublished":"2026-06-18T00:00:00-07:00","description":"Preface","headline":"How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2026/06/18/how-to-create-new-numbers.html"},"url":"http://localhost:4000/2026/06/18/how-to-create-new-numbers.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-06-18T00:00:00-07:00","datePublished":"2026-06-18T00:00:00-07:00","description":"Preface","headline":"How To Create New Numbers","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2026/06/18/how-to-create-new-numbers.html"},"url":"http://localhost:4000/2026/06/18/how-to-create-new-numbers.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="shortcut icon" type="image/png" href="/favicon.png"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alexander&apos;s Domain of Mathematics" /><style type="text/css">
@@ -28,6 +29,7 @@
     }
 
     .popup {
+        text-align: center;
         display: none;
         position: absolute;
         bottom: calc(100%);
@@ -45,6 +47,31 @@
 
     .annotated:hover .popup {
         display: block;
+    }
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
     }
   </style>
 </head><body><header class="site-header" role="banner">
@@ -66,11 +93,12 @@
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">How To Create New Numbers — A Perspective on Ring/Field Theory and Analysis</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2026-06-18T00:00:00-07:00" itemprop="datePublished">Jun 18, 2026
-      </time></p>
+  <header class="post-header"><div style="text-align: center;">
+      <h1 class="post-title p-name" itemprop="name headline">How To Create New Numbers</h1>
+      <i><h2 class="post-subtitle" style="color: #828282;">A Perspective on Ring/Field Theory and Analysis</h2></i>
+    </div><hr>
+
+    <p class="post-meta"></p>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
   
       
@@ -98,14 +126,16 @@
 
 <p>The purpose of this blog post is to present a broad overview of undegraduate-level abstract algebra from an alternative perspective. Often, fundamental algebraic structures — most notably groups, rings/modules, and fields — are presented in purely abstract and formal terms. This is essential for providing a logical and rigorous foundation for the discipline, but, at least as it was for me as an undergrad, it fails to explain <em>why</em> these structures were invented in the first place and, more importantly, <em>why</em> they are defined the way they are and not some other way.</p>
 
-<p>Simply put, I want to reframe abstract algebra — specifically Ring and Field Theory — as the branch of mathematics concerned with creating new number systems, understanding their properties and limitations, and how the <em>insolvability</em> of various problems in these number system grants us the ability to create more powerful and more interesting number systems.</p>
+<p>Simply put, I want to reframe abstract algebra — specifically Ring and Field Theory — as the branch of mathematics concerned with creating new number systems, understanding their properties and limitations, and how the <em>insolvability</em> of various problems in these number system grants us the ability to create more powerful and interesting number systems.</p>
 
-<p>When I talk about creating new number systems, I do not mean substituting one symbol for another, such as replacing the Arabic numerals $1, 2, 3, 4,…$ with Chinese characters 一, 二, 三, 四, … or Roman numerals <em>I, II, III, IV</em> or any other real or fictitious set of symbols. What I mean is extending an existing number system, such as the integers, by new numbers with desirable properties absent from the original number system. A classic example of this is the complex numbers: we take the existing real numbers and simply adjoining a new “number” $i$ which satisfies $i^2 = -1$. But, this explanation is unsatisfying. How can we just make up a new number like this? What does $i$ even mean? What’s stopping us from adding whatever “number” we want satisfying and properties we desire? How can we guarantee this number system is <span class="annotated">consistent<span class="popup">A number system is consistent if it has no logical contradictions</span></span>?</p>
+<p>When I talk about creating new number systems, I do not mean substituting one numeral for another, such as replacing the Arabic numerals $1, 2, 3, 4,…$ with Chinese characters 一, 二, 三, 四, … or Roman numerals <em>I, II, III, IV</em> or any other real or fictitious set of symbols. I am also not referring to the integers in different radixes, such as base-$2$, base-$16$, or even <a href="https://en.wikipedia.org/wiki/Factorial_number_system">factorial</a> or <a href="https://en.wikipedia.org/wiki/Quater-imaginary_base">imaginary bases</a> (although these are interesting in their own right). What I mean is extending an existing number system with new numbers with desirable properties.</p>
+
+<p>A classic example of this is the complex numbers: we take the existing real numbers and simply adjoin a new “number” $i$ which satisfies $i^2 = -1$. However, this explanation is unsatisfying. How can we just make up a new number like this? What does $i$ even mean? What’s stopping us from adding any “number” we want satisfying and properties we desire? How can we guarantee this number system is <span class="annotated">consistent<span class="popup">Containing no logical contradictions</span></span>?</p>
 
 <p>Throughout this text, there will be two ways to expand a number system.</p>
 <ol>
   <li>
-    <p><strong>Addressing problems</strong> — This is the primary method we will be using to create new numbers and works by formalizing the idea of throwing in new numbers with the properties we want. To apply this method, we find a “problem” that we are unable to solve with our existing system and construct a new system with that “problem” solved. Usually, the “problem” refers to polynomials and the numbers we add are the roots of these polynomials.</p>
+    <p><strong>Solutions to Equations</strong> — This is the primary method we will be using to create new numbers and works by formalizing the idea of throwing in new numbers with the properties we want. To apply this method, we find a “problem” that we are unable to solve with our existing system and construct a new system with that “problem” solved. Usually, the “problem” refers to polynomials and the numbers we add are the roots of these polynomials.</p>
   </li>
   <li>
     <p><strong>Filling in the gaps</strong> — Most notably in the context of constructing the real numbers from the rationals, we can use <span class="annotated">analytical<span class="popup">The branch of mathematics concerned with limits, continuity, infinitesimals, differentiability, etc.; calculus and topology</span></span> techniques to add new numbers in-between existing numbers. This method is dependent on our notion of “distance”, which is not as obvious and clear-cut as it may seem.</p>
@@ -117,129 +147,50 @@
 <div align="center" style="background: #c4c4c4; border: 2px solid black; border-radius: 10px; margin-bottom: 20px">
     <h4>
         <p>
-            <a href="#the-integers">The Integers $\mathbb{Z}$</a><br />
-            <a href="#the-rationals">The Rationals $\mathbb{Q}$</a><br />
-            <a href="#the-reals">The Reals $\mathbb{R}$</a><br />
-            <a href="#the-complex-numbers-algebraic-closure">The Complex Numbers $\mathbb{C}$ and Algebraic Closure</a><br />
-            <a href="#rings-fields-field-extensions">Rings, Fields and Field Extensions</a><br />
-            <a href="#quaternions-generalized-complex-numbers">Quaternions and Generalized Complex Numbers</a><br />
-            <a href="#finite-fields">$\mathbb{F}_p$ and Finite Field Arithmetic</a><br />
-            <a href="#p-adics">$p$-adics</a><br />
-            <a href="#what-next">What's Next?</a><br />
+            <a href="../../../how-to-create-new-numbers/set-theory.html">0. Set Theory Primer</a><br />
+            <a href="../../../how-to-create-new-numbers/integers.html">1. The Integers $\mathbb{Z}$</a><br />
+            <a href="../../../how-to-create-new-numbers/rationals.html">2. The Rationals $\mathbb{Q}$</a><br />
+            <a href="../../../how-to-create-new-numbers/reals.html">3. The Reals $\mathbb{R}$</a><br />
+            <a href="../../../how-to-create-new-numbers/complex.html">4. The Complex Numbers $\mathbb{C}$ and Algebraic Closure</a><br />
+            <a href="../../../how-to-create-new-numbers/rings-fields.html">5. Rings, Fields and Field Extensions</a><br />
+            <a href="../../../how-to-create-new-numbers/complex2.html">6. Quaternions and Generalized Complex Numbers</a><br />
+            <a href="../../../how-to-create-new-numbers/finite-fields.html">7. $\mathbb{F}_p$ and Finite Field Arithmetic</a><br />
+            <a href="../../../how-to-create-new-numbers/p-adics.html">8. $p$-adics</a><br />
+            <a href="../../../how-to-create-new-numbers/what-next.html">9. What's Next?</a><br />
+            <a href="../../../how-to-create-new-numbers/references.html">10. References</a><br />
         </p>
     </h4>
 </div>
 
-<p>I have written this text in order for it to be understood by people from all sorts of educational backgrounds. Though it is about abstract math, I am writing it for the layman. There are, of course, plenty of mathematical symbols and proofs, but they are there to supplement the text and you do not need to read or understand them all — they are there for the people who want something more rigorous.</p>
+<p>I have written this text in order for it to be understood by people from all sorts of educational backgrounds. Though it is about abstract math, I am writing it for the layman. I want this to feel informal, as if it was a conversation between you and a passionate and nerdy friend/colleague. There will, of course, be plenty of mathematical symbols and proofs, but they are there to supplement the text and you do not need to read or understand them all — they are there for the people who want something slightly more rigorous.</p>
 
-<p>May this article teach you something new, elucidate a concept you’ve been grappling with, or just simply be a fun read.</p>
+<p>Accordion elements like the ones below will provide optional proofs of important theorems.</p>
 
-<hr />
+<div>
+    <button class="accordion">Proof Example</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Proof contents here! $\Box$
+        </p>
+    </div>
+</div>
 
-<p><a name="the-integers"></a></p>
-
-<h1 id="the-integers-mathbbz">The Integers $\mathbb{Z}$</h1>
-
-<p>The simplest number system to start from would be the non-negative integers with the single operation of addition. Whether or not to call these the <em>counting numbers</em> or <em>natural numbers</em>, represented by the symbol $\mathbb{N}$, is a point of contention among mathematicians and is notably the <a href="https://cims.nyu.edu/~tjl8195/survey/results.html#q1">first question in an online poll on mathematical conventions</a>. For our purposes, $\mathbb{N}$ will include zero.</p>
-
-<!-- TODO: Brief remark about the history of zero? -->
-
-<p>The easiest way to formalize the positive integers is using the Peano axioms, which formalize in predicate logic the notion of counting.</p>
-<blockquote>
-  <p>Let the set of natural numbers be $\mathbb{N}$ and define the operation $\mathcal{S}x$ to be the “successor” of $x\in \mathbb{N}$.
-Then:</p>
-  <ol>
-    <li>Zero is a natural number $\left(0\in \mathbb{N}\right)$.</li>
-    <li>The successor of any natural number is a natural number $\left( x\in \mathbb{N} \Longrightarrow \mathcal{S}x\in \mathbb{N}\right)$.</li>
-    <li>There are no negative numbers; or, zero is not the successor of any number $\left(\forall x,\mathcal{S}x \neq 0\right)$.</li>
-    <li>Two numbers with the same successors are equal $\left(\forall x, y\in\mathbb{N}, \mathcal{S}x=\mathcal{S}y\Longrightarrow x=y\right)$.</li>
-    <li><strong>Axiom of induction</strong>: Any set $A$ that contains zero and every successor must be the set of natural numbers $\left(0\in A \wedge \left[\forall x\in A, \mathcal{S}x \in A\right]\Longrightarrow A=\mathbb{N}\right)$.</li>
-  </ol>
-</blockquote>
-
-<p>Essentially, the successor operation applies a “+1” to the number. With this interpretation, we can reinterpret Axiom 4 as allowing us to subtract 1. For convenience, let $\mathcal{S}^k$ correspond to $k$ successors one after the other. So, $\mathcal{S}^30 = \mathcal{S}(\mathcal{S}(\mathcal{S}0)) = 3$.</p>
-
-<p>There is also an implicit assumption about equality that is worth mentioning. The equals sign = denotes a type of relation known as an <span class="annotated"><em>equivalence relation</em><span class="popup">A reflexive, symmetric, and transitive relation</span></span>, which by definition must satisfies the following well-known properties:</p>
-<blockquote>
-  <ol>
-    <li><strong>Reflexivity</strong>: Any element $x$ equals itself $\left(\forall x\in S, x = x\right)$.</li>
-    <li><strong>Symmetry</strong>: If $x=y$, then $y=x$ $\left(\forall x, y\in S, x = y \Longrightarrow y = x\right)$.</li>
-    <li><strong>Transitivity</strong>: If $x=y$ and $y=z$, then $x=z$ $\left(\forall x, y\in S, x = y \wedge y = x \Longrightarrow x = z\right)$.</li>
-  </ol>
-</blockquote>
-
-<p>where $S$ is any set. We will encounter other equivalence relations later on.</p>
-
-<p>Using successors, we can denote $x+y$ as $\mathcal{S}^yx$ or $y$ successors of $x$ (e.g.: $2+3 = \mathcal{S}^32 = \mathcal{S}^50$). We can then demonstrate that the following intuitive properties of addition hold:</p>
-<blockquote>
-  <ol>
-    <li><strong>Associativty</strong>: $(x + y) + z = x + (y + z)$.</li>
-    <li><strong>Commutativity</strong>: $x + y = y + x$.</li>
-    <li><strong>Identity</strong>: $0$ is the unique natural number such that $x + 0 = x$.</li>
-    <li><strong>Cancellation</strong>: $x+z=y+z$ implies $x=z$.
-for any $x, y, z\in \mathbb{N}$.</li>
-  </ol>
-</blockquote>
-
-<!-- TODO: Formal proofs of these properties -->
-
-<!-- TODO: Revist the "problematic" axiom Sx=0 and derive the negative numbers -->
-
-<!-- TODO: Define multiplication to construct the ring of integers -->
-
-<hr />
-
-<p><a name="the-rationals"></a></p>
-
-<h1 id="the-rationals-mathbbq">The Rationals $\mathbb{Q}$</h1>
-
-<p>Adding the negative integers was not sufficient to solve all of our needs, however, as there are still linear equations that cannot be solved. Take the equation $2x=1$, for instance. We know that $x$ must be less than $1$ but also must be greater than $0$. But there is no such integer satisfying this requirement. To solve this equation, we must expand our number system by filling in the gaps between the integers.</p>
-
-<p>We can define the set of rationals as the set $\mathbb{Q} = \mathbb{N}\times \mathbb{N} = \Big\{(a,b)\ \Big|\ a,b\in \mathbb{Z}\Big\}$. Every number in this set corresponds to a pair of integers where the first is the numerator and the second the denominator. It’s convenient to represent elements of $\mathbb{Q}$ not as the pair $(a, b)$ but as $\frac{a}{b}$.</p>
-
-<hr />
-
-<p><a name="the-reals"></a></p>
-
-<h1 id="the-real-numbers-mathbbr">The Real Numbers $\mathbb{R}$</h1>
-
-<hr />
-
-<p><a name="the-complex-numbers-algebraic-closure"></a></p>
-
-<h1 id="the-complex-numbers-mathbbc-and-algebraic-closure">The Complex Numbers $\mathbb{C}$ and Algebraic Closure</h1>
-
-<hr />
-
-<p><a name="rings-fields-field-extensions"></a></p>
-
-<h1 id="rings-fields-and-field-extensions">Rings, Fields and Field Extensions</h1>
-
-<hr />
-
-<p><a name="quaternions-generalized-complex-numbers"></a></p>
-
-<h1 id="quaternions-and-generalized-complex-numbers">Quaternions and Generalized Complex Numbers</h1>
-
-<hr />
-
-<p><a name="finite-fields"></a></p>
-
-<h1 id="mathbbf_p-and-finite-field-arithmetic">$\mathbb{F}_p$ and Finite Field Arithmetic</h1>
-
-<hr />
-
-<p><a name="p-adics"></a></p>
-
-<h1 id="p-adics">$p$-adics</h1>
-
-<hr />
-
-<p><a name="what-next"></a></p>
-
-<h1 id="whats-next">What’s Next?</h1>
+<p>I hope my work teaches you something new, elucidates a concept you’ve been grappling with, or is simply just a fun read.</p>
 
   </div><a class="u-url" href="/2026/06/18/how-to-create-new-numbers.html" hidden></a>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    console.log(acc);
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) panel.style.maxHeight = null;
+        else panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+    }
+  </script>
 </article>
 
       </div>
@@ -260,7 +211,7 @@ for any $x, y, z\in \mathbb{N}$.</li>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>This is my blog and portfolio. It contains a small collection of the various mathematical projects and publications I have made.</p>
+        <p>My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.</p>
       </div>
     </div>
 

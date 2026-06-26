@@ -2,6 +2,7 @@
 layout: post
 title:  "Application of Chebyshev Polynomials to the Rational Equation x^k + x^-k"
 katex: true
+write-date: false
 ---
 
 ### A study of Chebyshev Polynomials and their seemingly unexpected application to the polynomial $$x^k + x^{-k}$$

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "On the Average Order of the Totient Summatory Function"
+write-date: false
 katex: false
 ---
 

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>How To Create New Numbers | Alexander’s Domain of Mathematics</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How To Create New Numbers" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made." />
+<meta name="twitter:description" property="og:description" content="My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made." />
+<link rel="canonical" href="http://localhost:4000/how-to-create-new-numbers/integers.html" />
+<meta property="og:url" content="http://localhost:4000/how-to-create-new-numbers/integers.html" />
+<meta property="og:site_name" content="Alexander’s Domain of Mathematics" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="How To Create New Numbers" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.","headline":"How To Create New Numbers","url":"http://localhost:4000/how-to-create-new-numbers/integers.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alexander&apos;s Domain of Mathematics" /><style type="text/css">
+    .annotated {
+        border-bottom: 1px dashed #888;
+        cursor: help;
+        position: relative;
+    }
+
+    .popup {
+        text-align: center;
+        display: none;
+        position: absolute;
+        bottom: calc(100%);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #c4c4c4;
+        color: #000;
+        padding: 6px 10px;
+        border-radius: 10px;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        z-index: 100; /* Ensures that the window is always at the top */
+        pointer-events: none;
+    }
+
+    .annotated:hover .popup {
+        display: block;
+    }
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+  </style>
+</head><body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Alexander&#39;s Domain of Mathematics</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/music/">Music</a><a class="page-link" href="/projects/">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header"><div style="text-align: center;">
+      <h1 class="post-title">How To Create New Numbers</h1>
+      <i><h2 class="post-subtitle" style="color: #828282;">A Perspective on Ring/Field Theory and Analysis</h2></i>
+    </div><hr>
+
+    
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+      <!-- JavaScript -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body,{
+          delimiters: [
+            { left: '$$',  right: '$$',  display: true  },
+            { left: '$',   right: '$',   display: false },
+            { left: '\\[', right: '\\]', display: true  },
+            { left: '\\(', right: '\\)', display: false }
+        ]});">
+      </script>
+
+      
+  </header>
+
+  <div class="post-content">
+    <h1 id="1-the-integers-mathbbz">1. The Integers $\mathbb{Z}$</h1>
+
+<h3 id="11-the-natural-numbers-mathbbn">1.1. The Natural Numbers $\mathbb{N}$</h3>
+
+<p>The simplest number system to start from would be the non-negative integers with the single operation of addition. Whether or not to call these the <em>counting numbers</em> or <em>natural numbers</em>, represented by the symbol $\mathbb{N}$, is a point of contention among mathematicians and is notably the <a href="https://cims.nyu.edu/~tjl8195/survey/results.html#q1">first question in an online poll on mathematical conventions</a>. For our purposes, $\mathbb{N}$ will include zero.</p>
+
+<p>Much of what follows will not be new, however, it may be presented in a way you may not be used to seeing. We will be utilizing the techniques taught in this section to justify the existence of more complex number systems (pun intended).</p>
+
+<p>The easiest way to formalize the natural numbers is using the <strong>Peano axioms</strong>, which formalize in predicate logic the notion of counting.</p>
+<blockquote>
+  <p>Let the set of natural numbers be $\mathbb{N}$ and define the operation $\mathcal{S}x$ to be the “successor” of $x\in \mathbb{N}$.
+Then:</p>
+  <ol>
+    <li>Zero is a natural number $\left(0\in \mathbb{N}\right)$.</li>
+    <li>The successor of any natural number is a natural number $\left( x\in \mathbb{N} \implies \mathcal{S}x\in \mathbb{N}\right)$.</li>
+    <li>There are no negative numbers; or, zero is not the successor of any number $\left(\forall x,\mathcal{S}x \neq 0\right)$.</li>
+    <li>Two numbers with the same successors are equal $\left(\forall x, y\in\mathbb{N}, \mathcal{S}x=\mathcal{S}y\implies x=y\right)$.</li>
+    <li><strong>Axiom of induction/infinity</strong>: Any set $A$ that contains zero and every successor must be the set of natural numbers $\left(0\in A \wedge \left[\forall x\in A, \mathcal{S}x \in A\right]\implies A=\mathbb{N}\right)$.</li>
+  </ol>
+</blockquote>
+
+<p>Essentially, the successor operation applies a “+1” to the number. With this interpretation, Axiom 4 allows us to subtract 1 from both sides of an equation.</p>
+
+<p>For convenience, we can let $\mathcal{S}^k$ correspond to $k$ successors. So, $\mathcal{S}^30 = \mathcal{S}(\mathcal{S}(\mathcal{S}0)) = 3$.</p>
+
+<p>Using successors, we can denote $x+y$ as $\mathcal{S}^yx$ or $y$ successors of $x$ (e.g.: $2+3 = \mathcal{S}^32 = \mathcal{S}^50$). We can then demonstrate that the following intuitive properties of addition hold:</p>
+<blockquote>
+  <ol>
+    <li><strong>Associativty</strong> — $(x + y) + z = x + (y + z)$.</li>
+    <li><strong>Commutativity</strong> — $x + y = y + x$.</li>
+    <li><strong>Identity</strong> — $0$ is the unique natural number such that $x + 0 = x$.</li>
+    <li><strong>Cancellation</strong> — $x+z=y+z$ implies $x=z$.</li>
+  </ol>
+</blockquote>
+
+<p>for any $x, y, z\in \mathbb{N}$. A more formal definition of addition relies on a result known as the <a href="https://en.wikipedia.org/wiki/Recursion#The_recursion_theorem"><em>recursion theorem</em></a>, which essentially guarantees the existence of recursive functions. I am omitting the proof of this theorem as well as proofs of the properties above for simplicity, but such proofs rely heavily on Axiom $5$. Detailed proofs can be found in <sup><a href="#references">[1]</a></sup> and <sup><a href="#references">[2]</a></sup>.</p>
+
+<p>Many of these properties seem so obvious that it’s not worth mentioning. However, a few useful number systems lack these intuitive and natural properties. Famously, the quaternions are noncommutative. We will discuss these weirder number systems later.</p>
+
+<p>We can also go further with our construction of the natural numbers by using a recursive approach. Notice that we didn’t define what $0$ actually <em>is</em> or what the successor of a number returns — we only defined what properties both objects satisfy. The best way to represent both concretely is to use sets. Let $0$ correspond to as the empty set, denoted by $\{\emptyset\}$. We can then explicitly define $\mathcal{S}x$ as $\mathcal{S}x=\{\emptyset, x\}$. Now, we have a representation of the naturals using only sets with each successor having one more set than the last. For instance:</p>
+<ul>
+  <li>$1 = \{\emptyset\}$ (the set containing the empty set).</li>
+  <li>$2 = \{\emptyset, 1\} = \{\emptyset, \{\emptyset\}\}$.</li>
+  <li>$3 = \{\emptyset, 2\} = \{\emptyset, \{\emptyset, \{\emptyset\}\}\}$.</li>
+</ul>
+
+<p><em>… and so on…</em></p>
+
+<p>Importantly, each set $X$ representing a natural number $x$ has a cardinality of $x$ (i.e. the number of elements in set $X$) even though at no point in our definition do we reference cardinality. This is to avoid a circular definition, such as “$2$ is a set with a cardinality of $2$”. As well, notice that all of Peano’s Axioms apply to this set-based construction of the naturals.</p>
+
+<p>It’s not that helpful to do arithmetic with the sets directly, so I will continue to use the Arabic numerals we’re all familiar with. The point of this aside is to illustrate a way we can interpret the natural numbers as sets which satisfy the properties we want. This will be a common theme as we expand our number system. If you are interested in learning more about this construction, I recommend reading Jacobson’s <em>Basic Algebra</em><sup><a href="#references">1</a></sup> and Halmos’s <em>Naive Set Theory</em><sup><a href="#references">2</a></sup>.</p>
+
+<hr />
+
+<h3 id="12-equality-equivalence-relations-and-partial-orders">1.2. Equality, Equivalence Relations, and Partial Orders</h3>
+
+<p>Now would be an important moment to mention how equality is formally defined. The equals sign = denotes a type of relation known as an <span class="annotated"><strong>equivalence relation</strong><span class="popup">A reflexive, symmetric, and transitive relation; equals.</span></span> and conveys some idea that two objects are “the same”. It might seem unnecessary to formalize this notion, but as we will soon see, equivalence relations are incredibly useful tools for constructing new numbers. An equivalence relation $\sim$ over a set $S$ must satisfy the following well-known properties:</p>
+<blockquote>
+  <ol>
+    <li><strong>Reflexivity</strong> — Any element $x$ is related to itself $\left(\forall x\in S, x \sim x\right)$.</li>
+    <li><strong>Symmetry</strong> — If $x\sim y$, then $y\sim x$ $\left(\forall x, y\in S, x \sim y \Longrightarrow y \sim x\right)$.</li>
+    <li><strong>Transitivity</strong> — If $x\sim y$ and $y\sim z$, then $x\sim z$ $\left(\forall x, y\in S, x \sim y \wedge y \sim x \Longrightarrow x \sim z\right)$.</li>
+  </ol>
+</blockquote>
+
+<p>where $S$ is any set. Note that the equality relation we’re used to satisfies all of the above properties. The congruence and similarity relations from geometry also satisfy these properties. We will encounter other equivalence relations later on.</p>
+
+<p>In the case of equality of the naturals, if we use our set construction, we can say two numbers $x$ are equal if their sets are the same. We can show that two sets $A$ and $B$ are the same if every element of $A$ is an element of $B$ and every element of $B$ is an element of $A$. We can write this mathematically as $A=B$ if and only if $A\subseteq B$ and $B\subseteq A$ where $A\subseteq B \Leftrightarrow \forall x\in A, x\in B$. So, letting the set representations of $x$ and $y$ be $X$ and $Y$ respectively, we can say that $x=y$ if and only if $X\subseteq Y$ and $Y\subseteq X$.</p>
+
+<p>A very important property of an equivalence relation is that it allows us to <span class="annotated"><em>partition</em><span class="popup">Decompose into disjoint sets</span></span> a set $S$. Essentially, for any $x\in S$, we can put all $y\in S$ that are “equal” to $x$ in a set and let $x$ be the representative of this set. We call such a set the <span class="annotated"><strong>equivalence class of $x$</strong><span class="popup">The set of all elements in a set equal to $x$ with equivlance relation $\sim$</span></span> and is denoted by $\overline{x} = \big\{y\in S\ \big|\ x\sim y\big\}$.</p>
+
+<p>By “partitioning” a set, I mean that the set of all equivalence classes $\overline{x}, \overline{y}, …$ over $S$ must be <span class="annotated">pairwise disjoint<span class="popup">Given a set of sets $S_1, S_2, …$, any two sets $S_i$ and $S_j$ satisfy $S_i\cap S_j=\emptyset$. <br />No two sets have an element in common.</span></span> or equal. For instance, if I have the set $S=\{a,b,c,d,e,f,g\}$ and $a\sim b$, $a\sim d$, $c\sim e$, and $e\sim g$, then the distinct equivalence classes are $\overline{a}=\{a, b, d\}$, $\overline{c} = \{c, e, g\}$, and $\overline{f} = \{f\}$. Any equivalence class you construct over $S$ must be exactly one of these disjoint equivalence classes.</p>
+
+<div>
+    <button class="accordion">Equivalence Relations Partition a Set</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Let $\overline{x}$ and $\overline{y}$ be equivalence classes over the set $S$ with equivalence relation $\sim$ and suppose $z\in \overline{x}\cap \overline{y}$. Then $z\sim x$ and $z\sim y$. By symmetry, $z\sim x$ implies $x\sim z$. By transitivity, $x\sim y$. This means that $\overline{x} \subseteq \overline{y}$ (since $x$ is related to $y$) and $\overline{y} \subseteq \overline{x}$ (since $y$ is related to $x$), so $\overline{x} = \overline{y}$. Thus, any two equivalence class with an element in common must intersect completely or not at all. $\Box$
+        </p>
+    </div>
+</div>
+
+<p>As another example, we could partition the set of all triangles based on similarity (e.g., Angle-Angle similarity, Side-Angle-Side similarity, Side-Side-Side similarity). The equivalence classes might include an equilateral triangle with side-length $1$ or a right triangle with sides $3, 4,$ and $5$. An equilateral triangle with side length $3$ would then belong to the equivalence class of equilateral triangles, whereas a right triangle with side length $6, 8,$ and $10$ would belong to the same equivalence class as a $3, 4, 5$ right triangle.</p>
+
+<div align="center">
+    <img src="\assets\how-to-create-numbers\triangle_similarity.png" />
+    <p><i>An example of equivalence classes using triangle similarity. $A\sim A'$ and $B\sim B'$</i></p>
+</div>
+
+<p>Equivalence relations are also important in graph theory. Say we have a graph $G=(V,E)$ where $V$ is the set of vertices and <span style="white-space: nowrap;">$E\subseteq V\times V$</span> is the set of edges. Then, given two vertices $u, v\in V$, the equivalence relation denoting connectedness is defined by $u\sim v$ if and only if there is a route from $u$ to $v$. We vacuously say that $u$ is connected to itself and, for every edge $(u, v)\in E$, it follows that $u\sim v$ (since $u$ is joined to $v$ by an edge). Then, the transitivity property allows us to find every route starting from a specific vertex. The equivalence class of a vertex is therefore the set of all vertices reachable from $u$.</p>
+
+<div align="center">
+    <img src="\assets\how-to-create-numbers\graph.png" />
+    <p><i>An example of equivalence classes using graph connectivity. The equivalence classes are<br />$\overline{0}=\{0,1,2\}, \overline{3}=\{3,4,5\}$, and $\overline{6}=\{6\}$</i></p>
+</div>
+
+<p>The importance of equivalence classes will become apparent once we start defining operations over classes. In a sense, equivalence classes <em>are</em> numbers.</p>
+
+<p>One nice feature of the natural numbers is that we can define what it means for two numbers to be greater than another. This might seem obvious (or trivial, as mathematicians like to overuse), but quite a few number systems lack ordering and rely on other number systems (such as the positive real numbers) in order to enforce a kind of order.</p>
+
+<p>For any set $S$, a <span class="annotated"><strong>partial order</strong><span class="popup">A reflexive, antisymmetric, and transitive relation; less than or equal to.</span></span>, denoted by $\preceq$, is a relation satisfying the following properties:</p>
+<blockquote>
+  <ol>
+    <li><strong>Reflexivity</strong> — Any element $x$ is related to itself $\left(\forall x\in S, x \preceq x\right)$.</li>
+    <li><strong>Antisymmetry</strong> — If $x\preceq y$ and $y\preceq x$, then $x = y$ $\left(\forall x, y\in S, x \preceq y \wedge y\preceq x \Longrightarrow x = y\right)$.</li>
+    <li><strong>Transitivity</strong> — If $x\preceq y$ and $y\preceq z$, then $x\preceq z$ $\left(\forall x, y\in S, x \preceq y \wedge y \preceq z \Longrightarrow x \preceq z\right)$.</li>
+  </ol>
+</blockquote>
+
+<p>We can think of $\preceq$ as a generalization of “less than or equal to”, and for the naturals we will use the symbol $\leq$. For natural numbers $x$ and $y$, we say that $x\preceq y$ if and only if there exists some natural number $z$ such that $x + z = y$.</p>
+
+<hr />
+
+<h3 id="13-negative-integers">1.3. Negative Integers</h3>
+
+<p>Now for our first extension of the naturals. Given two numbers $x$ and $y$ with $x\leq y$, it’s a reasonable question to ask what number we need to add to $x$ to get $y$. We represent this difference as $z=y-x$, which must be a natural number. But we have no way of adding a number to $y$ to get $x$, and so we must extend the naturals to incorporate the concept of negatives. It would be easy to just say that there exists a number $-x$ such that $y+(-x)=z$, but how would we represent this more formally? What set does $-x$ correspond to? It can’t be a natural number, since Axiom 3 states there can be no number whose successor is $0$.</p>
+
+<p>We can use equivalence relations to help us define negative numbers. For any pair of natural numbers with $a\leq b$, we can find its difference $b-a$ which itself is also a natural number. But, if there is another pair of natural numbers $c\leq d$ with the same difference, we can treat the two pairs as “the same”. In other words, $(a, b)$ and $(c,d)$ are “the same” if $b-a=d-c$. Written using only addition, this is the same as $a+d=b+c$. We can then obtain negative numbers if we drop the restrictions that $a\leq b$ and $c\leq d$.</p>
+
+<p>Define a new equivalence relation $\sim$ over the set $\mathbb{N}^2$ such that $(a, b) \sim (c, d) \Longleftrightarrow a+d=b+c$.</p>
+<div>
+    <button class="accordion">$(a,b)\sim(c,d)\Longleftrightarrow a+d=b+c$ Is an Equivalence Relation</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Equivalence relations must be reflexive, symmetric, and transitive, so we must verify that each property holds.
+            <ul>
+                <li> $a+b = b+a$ by commutativity of addition, hence $(a, b)\sim (a, b)$ and so $\sim$ is reflexive.</li>
+                <li> Suppose $(a,b)\sim (c,d)$. Then $a+d=b+c$ implies $c+b=d+a$ by commutativity of addition and symmetry of $=$. Thus, $(c, d)\sim (a, b)$ and so $\sim$ is symmetric.</li>
+                <li>Suppose $(a,b)\sim (c,d)$ and $(c, d)\sim (e, f)$. Then $a+d=b+c$ and $c+f=d+e$.
+                $$\begin{align*}
+                    a+d=b+c\\
+                    a+d+f=b+c+f &amp;&amp; (\text{add } f \text{ to both sides})\\
+                    a+d+f=b+d+e &amp;&amp; (\text{since } c+f=d+e)\\
+                    a+f=b+e &amp;&amp; (\text{by cancellation of　} d)\\
+                \end{align*}$$
+                Thus, $(a, b)\sim (e, f)$ and so $\sim$ is transitive. $\Box$
+                </li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+<p>What are the equivalence classes under this relation? Since $(a, b)$ represents the difference of $b$ and $a$, every natural number $x$ corresponds to the pair $(a, a + x)$ for any natural number $a$. For instance, $\overline{0} = \{(a, a)\ |\ \forall a\in \mathbb{N}\}$ and $\overline{1} = \{(a, a + 1)\ |\ \forall a\in \mathbb{N}\}$. Notice that for any $(a, b)$, if we swap $a$ and $b$ we get a negative difference. This means that if $x = \overline{(a,b)}$, then $-x=\overline{(b,a)}$.</p>
+
+<p>Finally, if these equivalence classes are in fact numbers, what would it mean to add them? Given arbitrary $(a, b)$ and $(c, d)$, the sum of the differences would be $(b-a)+(d-c)=b+d-a-c=(b+d)-(a+b)$. This difference corresponds to $(a+c,b+d)$. So, if $x=\overline{(a,b)}$ and $y=\overline{(c,d)}$, then $x+y=\overline{(a+c, b+d)}$.</p>
+
+<p>We can also confirm that $x+(-x)=0$ since $\overline{(a, b)} + \overline{(b, a)} = \overline{(a + b, b + a)} = 0$.</p>
+
+<hr />
+
+<h3 id="14-multiplication">1.4. Multiplication</h3>
+
+<p>Similar to addition, we can define multiplication recursively. For $x+y$, we iteratively apply the successor operation $y$ times to $x$. For $xy$, we instead iteratively apply the $+x$ operation $y$ times to $0$.</p>
+
+<p>We expect integer multiplication to satisfy the following properties, which should all feel intuitive:</p>
+<blockquote>
+  <ol>
+    <li><em>Associativity</em> — $x(yz)=(xy)z$</li>
+    <li><em>Commutativity</em> — $xy=yx$</li>
+    <li><em>Distributivity over addition</em> — $x(y+z)=xy+xz$</li>
+    <li><em>Identity</em> — $1\cdot x=x\cdot 1=x$</li>
+    <li>$0\cdot x=x\cdot 0=0$. Furthermore, if $xy=0$ for integers $x, y$, then $x=0$ or $y=0$ or both.</li>
+  </ol>
+</blockquote>
+
+<p>Now that we can add and multiply, we’ve created our first real number system! In fact, this new structure we’ve imbued the integers with has a name. We call this number system the <em>ring of integers</em>. We will talk about rings in greater detail later on, but for now, any set of objects with defined addition and multiplication operations is known as a ring (what constitutes “addition” and “multiplication” will need to be defined).</p>
+
+<hr />
+
+<h3 id="15-divisibiltiy-primes-and-factorization">1.5. Divisibiltiy, Primes, and Factorization</h3>
+
+<p>The final topic to discuss is how to formalize divisibility and factorization over the integers. Understanding how to factor is important for many number systems, as they are one of the primary techniques for solving equations. Importantly for number theorists, we can find the solution to many <span class="annotated">Diophantine Equations<span class="popup">Polynomial equations where the only solutions are integers.<br /> For example: $x^n+y^n=z^n$ where $x,y,z,n\in \mathbb{N}, n&gt;2.$</span></span> by understanding how to factor over integers or over generalizations of the integers (such as the Gaussian Integers — to be discussed in section 5).</p>
+
+<p>First, some terminology. This terminology will also be routinely used in the section on ring theory. We say that a nonzero integer $d$ <em>divides</em> $n$ (or that $d$ is a <em>divisor</em> of $n$ and $n$ is a <em>multiple</em> of $d$) if and only if $n=qd$ for some integer $q$. We denote this by $d\ |\ n$. We can further guarantee that this integer is unique.</p>
+
+<p>We haven’t defined a division operation for the integers yet as this will be tackled in the next section. For convenience, if $d\ |\ n$, then we will define $\frac{n}{d}=q$ to be the unique integer $q$ (known as the <em>quotient</em>) such that $n=qd$.</p>
+<div>
+    <button class="accordion">Quotients Are Unique</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Suppose for the sake of contradiction that $n=qd$ and $n=q'd$ for distinct $q$ and $q'$. Then $qd = q'd$ and so <span style="white-space: nowrap;">$(q-q')d=0$</span>. Since $d$ is nonzero, it follows that $q-q'=0$ or $q=q'$. Thus, every divisor has a unique quotient. $\Box$
+        </p>
+    </div>
+</div>
+
+<p>An integer can have several divisors and two or more integers may have several divisors in common. We call the largest divisor that divides a pair of integers $a$ and $b$ the <em>greatest common divisor</em> of $a$ and $b$, written as $\gcd(a, b)$. Formally, we say that $g=\gcd(a,b)$ if and only if every integer $d$ satisfying $d\ |\ a, d\ |\ b$ implies $d\leq g$.</p>
+
+<p>We can find the greatest divisor of any two integers using the <em>Euclidean Algorithm</em>. To do this, we need to use an important theorem.</p>
+<blockquote>
+  <p>(Remainder Theorem) Let $a, b\in \mathbb{Z}$ where $b\neq 0$. Then, there exist integers $q,r$ such that $a=qb+r$ where $0\leq r&lt;|b|$.</p>
+</blockquote>
+<div>
+    <button class="accordion">Remainder Theorem</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Consider for now only natural numbers $a$ and $b$.
+        </p>
+        <p>
+            Consider the set $S=\{b-qa\ |\ q\in N, b\geq qa\}$. Since $S$ is a set of natural numbers, the well-ordering principle states that there is some minimal element $r=b-qa$ where $r=b-q'a$ for some natural number $q'$. Suppose for the sake of contradiction that $r &gt; b$. Since $b\geq a$, the $r-a=b-q'a-a=b-(q'+1)a$ and so $r-a$ belongs to $S$. But this contradicts the assumption that $r$ is the minimal element in $S$, so $0\leq r &lt; b$ with $q=\frac{b-r}{a}$.
+        </p>
+        <p>
+            If either $a$ or $b$ (or both) are negative, we can simply determine $r$ by applying the previous method to $|a|$ and $|b|$ since any number and its negation share that same positive divisors. Then $q=\frac{b-r}{a}$. $\Box$
+        </p>
+    </div>
+</div>
+
+<!-- Euclidean Algorithm -->
+
+<p>By iteratively applying the Remainder Theorem for any $a, b$, we can find $\gcd(a, b)$. As an example, to find the greatest common divisor of $24$ and $18$:</p>
+
+<p>The integers also have two <em>units</em>: $1$ and $-1$. We will consider units in more detail later, but for now we consider $1$ and $-1$ to be the only units.</p>
+
+<p>When it comes to factoring, there are two related notions: irreducibility and primality.</p>
+<ul>
+  <li>A nonzero integer $x$ is <em>irreducible</em> if and only if $x=yz$ implies that either $y$ or $z$ is a unit (i.e., either $y$ or $z$ is $1$ or $-1$). This is how prime integers are typically defined. For instance, $7$ is prime since it can only be written as $1\cdot 7$ or $-1\cdot -7$. But $6$ is not prime since $6=2\cdot 3$ and neither $2$ nor $3$ are units.</li>
+  <li>A nonzero integer $p$ is <em>prime</em> if and only if $p\ |\ ab$ implies that $p\ |\ a$ or $p\ |\ b$. As an example, $6$ is not a prime number since $6\ |\ 24$ yet $6$ divide neither $3$ nor $8$. Whereas irreducibility is a property preventing a number to be factored further, primality is a property allowing us to factor a given number completely.
+For the integers, these two notions are the same. But it is important to understand the distinction as there are plenty of number systems where irreducibles and primes are not the same.</li>
+</ul>
+<div>
+    <button class="accordion">All integer irreducibles are prime</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Suppose that $x$ is an irreducible. Then $x=yz$ with either $y$ or $z$ unit and so $x\ |\ yz$. Consider the case where $y$ is a unit. Then there exists a nonzero integer $w$ such that $yw = 1$. So, multiplying $x=yz$ by $w$ on both sides yields $wx = z$ or $x\ |\ z$. If instead $z$ is a unit, then we would have shown that $x\ |\ y$. Thus, $x$ must be prime. $\Box$
+        </p>
+    </div>
+</div>
+<div>
+    <button class="accordion">All integer primes are irreducible</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Suppose that $p$ is a prime and $p=ab$ for some $a, b\in \mathbb{Z}$. Then $p$ divides $ab$ and so, by primality, either $p$ divides $a$ or $p$ divides $b$. Without loss of generality, suppose $p$ divides $a$. Then $pc = a$ for some integer $c$ and so $p=pcb$. We can subtract $pcb$ from both sides and factor $p$ to obtain $p(1-bc) = 0$. Since $p$ is nonzero, this means that $bc = 1$ and so both $b$ and $c$ are units. Hence, $p$ must be irreducible $\Box$
+        </p>
+    </div>
+</div>
+<p>From now on, when dealing with the integers, I will refer to primes and irreducibles interchangeably as simply “primes”. Remember the distinction, however, as it will be crucial later on.</p>
+
+<p>An integer that is neither zero nor prime nor unit is known as a <em>composite</em> number.</p>
+
+<!-- Fundamental Theorem of Arithmetic -->
+
+<p>We can prove that there are infinitely many prime numbers using an argument devised by Euclid. If we assume that there are finitely many primes, we can take the product of all these primes and add $1$. The number we get must then be divisible by a prime not in our finite list, thus creating a contradiction.</p>
+<div>
+    <button class="accordion">There are infinitely many primes</button>
+    <div class="panel">
+        <p>
+            <i>Proof:</i> Suppose there are only finitely many prime numbers.
+        </p>
+        <p>
+            We can list them as $P=\{p_1, p_2, \cdots, p_n\}$ for some $n\in \mathbb{N}$. Let $N=p_1p_2\cdots p_n + 1$.
+        </p>
+        <p>
+            There are two cases for $N$. Either $N$ is prime or composite.
+            <ul>
+                <li> If $N$ is prime, then we are done --- we have found a prime that is not one of the primes in $P$, thereby contradicting our initial assumption.
+                </li> If $N$ is composite, then we can factor it as a product of primes using the Fundamental Theorem of Arithmetic. Notice that for any integer $i\in \mathbb{N}$, $N=qp_i+1$ where $q$ is the product of all primes in $P$ except $p_i$. None of the primes $p_i$ divide $N$, hence all of its prime factors must not belong to $P$, contradicting our initial assumption
+            </ul>
+            Thus, there are infinitely many primes $\Box$
+        </p>
+    </div>
+</div>
+
+<p>I want to reiterate that the purpose of all this discussion was not to needlessly axiomatize and formalize the basic concepts of integers, addition, and multiplication, but rather, to introduce the idea of defining numbers by the properties we wish them to have and explicitly constructing these numbers using sets. Many of the ideas discussed above will be utilized again and again in the following chapters.</p>
+
+  </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    console.log(acc);
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) panel.style.maxHeight = null;
+        else panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+    }
+  </script>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Alexander&#39;s Domain of Mathematics</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Alexander&#39;s Domain of Mathematics</li><li><a class="u-email" href="mailto:lextmcdowell@gmail.com">lextmcdowell@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/alexander-mcdowell"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">alexander-mcdowell</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

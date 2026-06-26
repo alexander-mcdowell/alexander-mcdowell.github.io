@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.9.0 -->
-<title>Projects | Alexander’s Domain of Mathematics</title>
+<title>How To Create New Numbers | Alexander’s Domain of Mathematics</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Projects" />
+<meta property="og:title" content="How To Create New Numbers" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made." />
 <meta name="twitter:description" property="og:description" content="My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made." />
-<link rel="canonical" href="http://localhost:4000/projects/" />
-<meta property="og:url" content="http://localhost:4000/projects/" />
+<link rel="canonical" href="http://localhost:4000/how-to-create-new-numbers/rings-fields.html" />
+<meta property="og:url" content="http://localhost:4000/how-to-create-new-numbers/rings-fields.html" />
 <meta property="og:site_name" content="Alexander’s Domain of Mathematics" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Projects" />
+<meta name="twitter:title" content="How To Create New Numbers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.","headline":"Projects","url":"http://localhost:4000/projects/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.","headline":"How To Create New Numbers","url":"http://localhost:4000/how-to-create-new-numbers/rings-fields.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="shortcut icon" type="image/png" href="/favicon.png"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Alexander&apos;s Domain of Mathematics" /><style type="text/css">
@@ -91,106 +91,33 @@
       <div class="wrapper">
         <article class="post">
 
-  <header class="post-header"><h1 class="post-title">Projects</h1>
-      <i><h2 class="post-subtitle" style="color: #828282;"></h2></i><hr>
+  <header class="post-header"><div style="text-align: center;">
+      <h1 class="post-title">How To Create New Numbers</h1>
+      <i><h2 class="post-subtitle" style="color: #828282;">A Perspective on Ring/Field Theory and Analysis</h2></i>
+    </div><hr>
 
     
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+      <!-- JavaScript -->
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body,{
+          delimiters: [
+            { left: '$$',  right: '$$',  display: true  },
+            { left: '$',   right: '$',   display: false },
+            { left: '\\[', right: '\\]', display: true  },
+            { left: '\\(', right: '\\)', display: false }
+        ]});">
+      </script>
+
+      
   </header>
 
   <div class="post-content">
-    <style>
-    .project-name {
-        display: inline-block;
-        overflow: hidden;
-        border: 1px solid #ccc;
-        background-color: #f1f1f1;
-    }
-
-    .project-name button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-        font-size: 16px;
-        font-weight: bold;
-    }
-
-    .project-name button:hover {
-        background-color: #ddd;
-    }
-
-    .project-name button.active {
-        background-color: #ccc;
-    }
-
-    .project-content {
-        display: none;
-        padding: 6px 12px;
-        border: 1px solid #ccc;
-        background-color: #fdfdfd;
-    }
-</style>
-
-<script>
-    function toggleProject(i) {
-        let project_names = document.getElementsByClassName("project-name");
-        let project_content = document.getElementsByClassName("project-content");
-
-        if (project_content[i].style.display == "block") {
-            project_content[i].style.display = "none";
-            project_names[i].className = project_names[i].className.replace(" active", "");
-        } else {
-            project_content[i].style.display = "block";
-            project_names[i].className += " active";
-        }
-    }
-</script>
-
-<p>Below is a collection of various projects I have made.</p>
-<hr />
-<p><br /></p>
-
-<!-- Shenzhen Solitaire -->
-<div class="project-name" id="shenzhen-solitare">
-    <button onclick="toggleProject(0)">Shenzhen Solitaire</button>
-</div>
-<div class="project-content" id="shenzhen-solitare-content">
-    <img src="images/solitaire-image.png" />
-    <p>
-        A web port of Shenzhen Solitaire, a minigame from <a href="https://store.steampowered.com/app/504210/SHENZHEN_IO/">Shenzhen I/O</a>, developed by Zachtronics.<br />
-        Code may be found <a href="https://github.com/alexander-mcdowell/ShenzhenSolitaire">here</a>.<br />
-        Try it out for yourself <a href="/projects/ShenzhenSolitaire/shenzhen.html">here</a>!
-    </p>
-</div>
-
-<!-- Graph Visualizer -->
-<div class="project-name" id="graph-visualizer">
-    <button onclick="toggleProject(1)">Graph Visualizer</button>
-</div>
-<div class="project-content" id="graph-visualizer-content">
-    <img src="images/graph-image.png" />
-    <p>
-        A small interactive tool for dynamic visualization of graphs.<br />
-        Code may be found <a href="https://github.com/alexander-mcdowell/GraphVisualizer">here</a>.<br />
-        Try it out for yourself <a href="/projects/GraphVisualizer/index.html">here</a>!
-    </p>
-</div>
-
-<!-- Perlin Noise -->
-<div class="project-name" id="perlin-noise">
-    <button onclick="toggleProject(2)">Perlin Noise Explorer</button>
-</div>
-<div class="project-content" id="perlin-noise-content">
-    <img src="images/perlin-image.png" />
-    <p>
-        A tool for procedural generation of terrain using Perlin Noise, created as the final project for a computer graphics class at UCI.<br />
-        Code may be found <a href="https://github.com/alexander-mcdowell/CS114-Final-Project">here</a>.<br />
-        Try it out for yourself <a href="/projects/CS114-Final-Project/final.html">here</a>!
-    </p>
-</div>
+    <h1 id="5-rings-fields-and-field-extensions">5. Rings, Fields and Field Extensions</h1>
 
   </div>
 

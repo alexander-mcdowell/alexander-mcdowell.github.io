@@ -27,6 +27,7 @@
     }
 
     .popup {
+        text-align: center;
         display: none;
         position: absolute;
         bottom: calc(100%);
@@ -44,6 +45,31 @@
 
     .annotated:hover .popup {
         display: block;
+    }
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
     }
   </style>
 </head><body><header class="site-header" role="banner">
@@ -65,8 +91,10 @@
       <div class="wrapper">
         <article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Music</h1>
+  <header class="post-header"><h1 class="post-title">Music</h1>
+      <i><h2 class="post-subtitle" style="color: #828282;"></h2></i><hr>
+
+    
   </header>
 
   <div class="post-content">
@@ -179,6 +207,19 @@ I have a few original compositions, with more soon to come!</p>
 </div>
 
   </div>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    console.log(acc);
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) panel.style.maxHeight = null;
+        else panel.style.maxHeight = panel.scrollHeight + "px";
+      });
+    }
+  </script>
 
 </article>
 

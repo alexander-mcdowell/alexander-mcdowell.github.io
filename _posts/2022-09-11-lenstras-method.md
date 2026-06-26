@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Factoring With Geometry: Lestra’s Method"
+write-date: false
 ---
 
 ### An introduction to a fascinating integer factorization algorithm, told in five parts.
