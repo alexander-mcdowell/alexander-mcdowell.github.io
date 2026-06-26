@@ -1,8 +1,8 @@
 title: Alexander's Domain of Mathematics
 email: lextmcdowell@gmail.com
 description: >-
-  My blog and portfolio. It contains a small collection of the various mathematical projects, publications, and music I have made.
-baseurl: ""
+  My blog and portfolio. A collection of the various projects, publications, and music I have made.
+baseurl: "https://alexander-mcdowell.github.io"
 url: "https://alexander-mcdowell.github.io"
 github_username: alexander-mcdowell
 
