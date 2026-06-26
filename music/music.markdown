@@ -1,18 +1,19 @@
 ---
 layout: page
+center-title: true
 title: Music
 permalink: /music/
 ---
 
-I play the viola/violin and have for over ten years. Currently, I am teaching myself piano and drums.
+I play the viola/violin and have for over ten years. I am currently learning to play the piano.
 
-Over the past couple of years, I have made several arrangements and compositions, some of which have become quite popular. You can support me on my [Ko-Fi](https://ko-fi.com/luthanicus)!
+I have made several arrangements and compositions, some of which have become quite popular. You can support me on my [Ko-Fi](https://ko-fi.com/luthanicus)!
 
 <div style="border-top: 1px solid black; border-bottom: 1px solid black">
     <h3 align="center"><b>Arrangements</b></h3>
 </div>
 \\
-I've published over a hundred pieces on my [MuseScore](https://musescore.com/user/1214651). Some of these arrangements (often from video games) include:
+I've published over a hundred arrangements on my [MuseScore](https://musescore.com/user/1214651). Some of these arrangements (often from video games) include:
 - A solo piano arrangement of [*Down By the River*](https://musescore.com/user/1214651/scores/12491362) from *Baldur's Gate 3* with roughly 20k views and 648 favorites!
 - A string quartet arrangement of [*Cogwork Dancers*](https://musescore.com/user/1214651/scores/27831379) from *Hollow Knight: Silksong* with 4.3k views and 74 favorites. This arrangement was also covered by violinist IAmARainbowSheep in a [YouTube video](https://youtu.be/twf3nF7XG4k?si=Dj8OabPwOxdGNeIh) with 104k views!
 - An arrangement of [*Coral Crown*](https://musescore.com/user/1214651/scores/16516684) from *Hades II* for electronic guitars, bass, drums, and solo violin. This piece was also covered by IAmARainbowSheep in [this video](https://www.youtube.com/watch?v=2AvqtXW0XxM).

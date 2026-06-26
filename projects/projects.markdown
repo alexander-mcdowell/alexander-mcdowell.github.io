@@ -1,5 +1,6 @@
 ---
 layout: page
+center-title: true
 title: Projects
 permalink: /projects/
 ---
@@ -54,9 +55,6 @@ permalink: /projects/
         }
     }
 </script>
-
-Below is a collection of various projects I have made.
-<hr><br>
 
 <!-- Shenzhen Solitaire -->
 <div class="project-name" id="shenzhen-solitare">
